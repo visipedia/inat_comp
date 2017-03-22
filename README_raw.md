@@ -11,9 +11,9 @@ Number of Training Images:
 Number of Validation Images:
 
 ## Evalutation
-We follow a similar metric to the classification tasks of the ILSVRC. For each image $i$, an algorithm will produce 5 labels $l_{ij}$, $j=1,\ldots,5$. Each image has one ground truth label $g_i$, and the error for that image is:
+We follow a similar metric to the classification tasks of the [ILSVRC](http://image-net.org/challenges/LSVRC/2016/index#scene). For each image $i$, an algorithm will produce 5 labels $l_{ij}$, $j=1,\ldots,5$. Each image has one ground truth label $g_i$, and the error for that image is:
 $$
-e_i = \min_{j}d(l_ij, g_i)
+e_i = \min_{j}d(l_{ij}, g_i)
 $$
 Where
 $$
@@ -23,6 +23,7 @@ d(x, y) =
     1  & \quad \text{otherwise}\\
 \end{cases}
 $$
+
 The overall error score for an algorithm is the average error over all $N$ test images:
 $$
 \text{score} = \frac{1}{N} \sum_{i} e_{i}
