@@ -6,9 +6,10 @@ The 2017 competition is part of the [FGVC^4 workshop]() at [CVPR](http://cvpr201
 
 ## Details
 
-Number of Species: 
-Number of Training Images: 
-Number of Validation Images:
+* Number of Species: X
+* Number of Training Images: Y 
+* Number of Validation Images: Z
+* Number of Testing Images: W
 
 ## Evalutation
 We follow a similar metric to the classification tasks of the [ILSVRC](http://image-net.org/challenges/LSVRC/2016/index#scene). For each image $i$, an algorithm will produce 5 labels $l_{ij}$, $j=1,\ldots,5$. Each image has one ground truth label $g_i$, and the error for that image is:
@@ -79,7 +80,7 @@ license{
 ```
 
 ## Submission Format
-
+Depends on if we use Kaggle or not...
 ```
 [{
   "image_id" : int,
