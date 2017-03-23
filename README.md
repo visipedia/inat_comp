@@ -6,10 +6,10 @@ The 2017 competition is part of the [FGVC^4 workshop](fgvc.org) at [CVPR](http:/
 
 ## Details
 
-* Number of Species: X
-* Number of Training Images: Y 
-* Number of Validation Images: Z
-* Number of Testing Images: W
+* Number of Species: 5089
+* Number of Training Images: 411,326 
+* Number of Validation Images: 263844
+* Number of Testing Images: X
 
 Super Categories:
 
