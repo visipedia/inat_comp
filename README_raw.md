@@ -12,6 +12,7 @@ The 2017 competition is part of the [FGVC^4 workshop](fgvc.org) at [CVPR](http:/
 * Number of Testing Images: W
 
 Super Categories:
+
 | Name | Species Count | Train + Val Image Count |
 |------|---------------|-------------|
 | Aves | 964 | 235521 | 
