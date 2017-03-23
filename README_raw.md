@@ -31,7 +31,7 @@ The 2017 competition is part of the [FGVC^4 workshop](fgvc.org) at [CVPR](http:/
 |Total| 5089 | 675170 |
 
 ## Evalutation
-We follow a similar metric to the classification tasks of the [ILSVRC](http://image-net.org/challenges/LSVRC/2016/index#scene). For each image $i$, an algorithm will produce 5 labels $l_{ij}$, $j=1,\ldots,5$. We allow 5 labels because some species are distinguished with additional data provided by the observer, such as latitude & longitude or date. Each image has one ground truth label $g_i$, and the error for that image is:
+We follow a similar metric to the classification tasks of the [ILSVRC](http://image-net.org/challenges/LSVRC/2016/index#scene). For each image $i$, an algorithm will produce 5 labels $l_{ij}$, $j=1,\ldots,5$. We allow 5 labels because some species are distinguished with additional data provided by the observer, such as latitude, longitude and date. It might also be the case that multiple species occur in an image (e.g. a photo of a bee on a flower). For this competition each image has one ground truth label $g_i$, and the error for that image is:
 $$
 e_i = \min_{j}d(l_{ij}, g_i)
 $$
