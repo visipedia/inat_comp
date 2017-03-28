@@ -9,7 +9,7 @@ The 2017 competition is part of the [FGVC^4 workshop](fgvc.org) at [CVPR](http:/
 There are a total of 5,089 categories in the dataset, with 579,184 training images and 95,986 validation images. For the training set, the distribution of images per category follows the observation frequecy of that category by the iNaturalist community. Therefore, there is a non-uniform distribution of images per category. 
 
 
-| Super Category |	Species Count	| Train Images |	Val Images |
+| Super Category |	Category Count	| Train Images |	Val Images |
 |------|---------------|-------------|---------------|
 Plantae|2,101|158,407|38,206|
 Insecta|1,021|100,479|18,076|
