@@ -6,26 +6,26 @@ The 2017 competition is part of the [FGVC^4 workshop](fgvc.org) at [CVPR](http:/
 
 ## Details
 
-There are a total of 5,089 categories in the dataset, with 411,326 training images and 263,844 validation images. The distribution of images per category follows the observation frequecy of that category by the iNaturalist community. Therefore, there is a non-uniform distribution of images per category. 
+There are a total of 5,089 categories in the dataset, with 579,184 training images and 95,986 validation images. For the training set, the distribution of images per category follows the observation frequecy of that category by the iNaturalist community. Therefore, there is a non-uniform distribution of images per category. 
 
 
 | Super Category |	Species Count	| Train Images |	Val Images |
 |------|---------------|-------------|---------------|
-|Animalia|77|5228|1362|
-|Actinopterygii|53|1982|637|
-|Chromista|9|398|144|
-|Mollusca|93|7536|1841|
-|Fungi|121|5826|1780|
-|Reptilia|289|35201|5680|
-|Mammalia|186|29333|3490|
-|Amphibia|115|15318|2385|
-|Protozoa|4|308|73|
-|Aves|964|214295|21226|
-|Insecta|1021|100479|18076|
-|Arachnida|56|4873|1086|
-|Plantae|2101|158407|38206|
+Plantae|2,101|158,407|38,206|
+Insecta|1,021|100,479|18,076|
+Aves|964|214,295|21,226|
+Reptilia|289|35,201|5,680|
+Mammalia|186|29,333|3,490|
+Fungi|121|5,826|1,780|
+Amphibia|115|15,318|2,385|
+Mollusca|93|7,536|1,841|
+Animalia|77|5,228|1,362|
+Arachnida|56|4,873|1,086|
+Actinopterygii|53|1,982|637|
+Chromista|9|398|144|
+Protozoa|4|308|73|
 |||||
-|Total|13|579184|95986|
+|Total|13|579,184|95,986|
 
 
 ## Evalutation
