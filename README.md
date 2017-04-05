@@ -100,7 +100,8 @@ license{
 ```
 
 ## Submission Format
-Depends on if we use Kaggle or not...
+*TBD*
+The submission format is still being determined. It may look similar to:
 ```
 [{
   "image_id" : int,
