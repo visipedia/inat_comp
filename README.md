@@ -2,14 +2,7 @@
 Please open an issue if you have questions or problems with the dataset.
 
 # 2017 Competition
-The 2017 competition, sponsored by Google, is part of the [FGVC^4 workshop](fgvc.org) at [CVPR](http://cvpr2017.thecvf.com/). 
-
-# Data
-
-Download the dataset files here:
-  * [Training and validation images [186GB]](http://www.vision.caltech.edu/~gvanhorn/datasets/inaturalist/fgvc4_competition/train_val_images.tar.gz)
-      * Images have a max dimension of 800px
-  * [Training and validation annotations [26MB]](http://www.vision.caltech.edu/~gvanhorn/datasets/inaturalist/fgvc4_competition/train_val2017.zip)
+The 2017 competition, sponsored by Google, is part of the [FGVC^4 workshop](http://fgvc.org) at [CVPR](http://cvpr2017.thecvf.com/). 
 
 ## Details
 
@@ -44,19 +37,13 @@ Where
 The overall error score for an algorithm is the average error over all <img src="https://rawgit.com/visipedia/inat_comp/master/svgs/f9c4988898e7f532b9f826a75014ed3c.svg?invert_in_darkmode" align=middle width=14.94405pt height=22.38192pt/> test images:
 <p align="center"><img src="https://rawgit.com/visipedia/inat_comp/master/svgs/444adcac0c7cbb4a8419ee1484625349.svg?invert_in_darkmode" align=middle width=118.05123pt height=41.069655pt/></p>
 
-## Using Additional Data
+## Guidelines
 
-### Not Allowed
-* Annotating the test set in any way (e.g. category labels, bounding boxes) is not allowed.
-* We discourage the use of additional training or validation images, including but not limited to:   
-   * Scraping the iNaturalist website or using the iNaturalist api to collect more training data or validation data
-   * Scraping images from web search engines to collect more training data or validation data
-   * Scraping photo hosting websites (e.g. Flickr) to collect more training data or validation data
+Participants are restricted to train their algorithms on iNaturalist 2017 train and validation sets. Pretrained models may be used to construct the algorithms (e.g. ImageNet pretrained models) as long as participants do not actively collect additional data for the target categories of the iNaturalist 2017 competition. Please specify any and all external data used for training when uploading results.
 
-If you are compelled to add additional images to your training or validation sets you must specify this when submitting your results. The organizers of the competition reserve the right to remove teams that use increased training and validation sets.   
+The general rule is that we want participants to use only the provided training and validation images to train a model to classify the test images. We do not want participants crawling the web in search of additional data for the target categories. Participants should be in the mindset that this is the only data available for those categories.
 
-### Allowed
-* Collecting additional annotations (e.g. bounding boxes) on the provided training and validation sets is allowed. Teams should specify that they collected additional annotations when submitting results. 
+Participants are allowed to collect additional annotations (e.g. bounding boxes) on the provided training and validation sets. Teams should specify that they collected additional annotations when submitting results. 
 
 ## Annotation Format
 We closely follow the annotation format of the [COCO dataset](http://mscoco.org/dataset/#download). The annotations are stored in the [JSON format](http://www.json.org/) and are organized as follows:
@@ -117,8 +104,7 @@ The submission format is still being determined. It may look similar to:
 }]
 ```
 
-
-# Terms of Use
+## Terms of Use
 
 By downloading this dataset you agree to the following terms:
 
@@ -128,3 +114,9 @@ By downloading this dataset you agree to the following terms:
 4. The Califonia Insitute of Technology makes no representations or warranties regarding the data, including but not limited to warranties of non-infringement or fitness for a particular purpose.
 5. You accept full responsibility for your use of the data and shall defend and indemnify the Califonia Insitute of Technology, including its employees, officers and agents, against any and all claims arising from your use of the data, including but not limited to your use of any copies of copyrighted images that you may create from the data.
 
+## Data
+
+Download the dataset files here:
+  * [Training and validation images [186GB]](http://www.vision.caltech.edu/~gvanhorn/datasets/inaturalist/fgvc4_competition/train_val_images.tar.gz)
+      * Images have a max dimension of 800px
+  * [Training and validation annotations [26MB]](http://www.vision.caltech.edu/~gvanhorn/datasets/inaturalist/fgvc4_competition/train_val2017.zip)
