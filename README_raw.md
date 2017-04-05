@@ -129,4 +129,5 @@ By downloading this dataset you agree to the following terms:
 Download the dataset files here:
   * [Training and validation images [186GB]](http://www.vision.caltech.edu/~gvanhorn/datasets/inaturalist/fgvc4_competition/train_val_images.tar.gz)
       * Images have a max dimension of 800px
+      * Untaring the images creates a directory structure like `train_val_images/super category/category/image.jpg`. This may take a while.
   * [Training and validation annotations [26MB]](http://www.vision.caltech.edu/~gvanhorn/datasets/inaturalist/fgvc4_competition/train_val2017.zip)
