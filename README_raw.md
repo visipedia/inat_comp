@@ -2,7 +2,7 @@
 Please open an issue if you have questions or problems with the dataset.
 
 # 2017 Competition
-The 2017 competition is part of the [FGVC^4 workshop](fgvc.org) at [CVPR](http://cvpr2017.thecvf.com/). 
+The 2017 competition, sponsored by Google, is part of the [FGVC^4 workshop](fgvc.org) at [CVPR](http://cvpr2017.thecvf.com/). 
 
 # Data
 
@@ -66,7 +66,7 @@ $$
 If you are compelled to add additional images to your training or validation sets you must specify this when submitting your results. The organizers of the competition reserve the right to remove teams that use increased training and validation sets.   
 
 ### Allowed
-* Collecting additional annotations (e.g. bounding boxes) on the provided training dataset is allowed. Teams should specify that they collected additional annotations when submitting results. 
+* Collecting additional annotations (e.g. bounding boxes) on the provided training and validation sets is allowed. Teams should specify that they collected additional annotations when submitting results. 
 
 ## Annotation Format
 We closely follow the annotation format of the [COCO dataset](http://mscoco.org/dataset/#download). The annotations are stored in the [JSON format](http://www.json.org/) and are organized as follows:
