@@ -40,14 +40,13 @@ The overall error score for an algorithm is the average error over all <img src=
 ## Using Additional Data
 
 ### Not Allowed
+* Annotating the test set in any way (e.g. category labels, bounding boxes) is not allowed.
 * We discourage the use of additional training or validation images, including but not limited to:   
    * Scraping the iNaturalist website or using the iNaturalist api to collect more training data or validation data
    * Scraping images from web search engines to collect more training data or validation data
    * Scraping photo hosting websites (e.g. Flickr) to collect more training data or validation data
 
 If you are compelled to add additional images to your training or validation sets you must specify this when submitting your results. The organizers of the competition reserve the right to remove teams that use increased training and validation sets.   
-
-* Annotating the test set in any way (e.g. category labels, bounding boxes) is not allowed.
 
 ### Allowed
 * Collecting additional annotations (e.g. bounding boxes) on the provided training dataset is allowed. Teams should specify that they collected additional annotations when submitting results. 
