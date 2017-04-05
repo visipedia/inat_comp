@@ -1,3 +1,5 @@
+![Banner](https://rawgit.com/visipedia/inat_comp/master/assets/banner.jpg)
+
 # iNaturalist Competition 
 Please open an issue if you have questions or problems with the dataset.
 
