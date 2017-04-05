@@ -37,6 +37,18 @@ Where
 The overall error score for an algorithm is the average error over all <img src="https://rawgit.com/visipedia/inat_comp/master/svgs/f9c4988898e7f532b9f826a75014ed3c.svg?invert_in_darkmode" align=middle width=14.94405pt height=22.38192pt/> test images:
 <p align="center"><img src="https://rawgit.com/visipedia/inat_comp/master/svgs/444adcac0c7cbb4a8419ee1484625349.svg?invert_in_darkmode" align=middle width=118.05123pt height=41.069655pt/></p>
 
+## Using Additional Data
+We discourage the use of additional training or validation images, including but not limited to:   
+   * Scraping the iNaturalist website or using the iNaturalist api to collect more training data or validation data
+   * Scraping images from web search engines to collect more training data or validation data
+   * Scraping photo hosting websites (e.g. Flickr) to collect more training data or validation data
+
+If you are compelled to add additional images to your training or validation sets you must specify this when submitting your results. The organizers of the competition reserve the right to remove teams that use increased training and validation sets.   
+
+Collecting additional annotations (e.g. bounding boxes) on the provided training dataset is allowed. Teams should specify that they collected additional annotations when submitting results. 
+
+Annotating the test set in any way (e.g. category labels, bounding boxes), is not allowed.
+
 ## Annotation Format
 We closely follow the annotation format of the [COCO dataset](http://mscoco.org/dataset/#download). The annotations are stored in the [JSON format](http://www.json.org/) and are organized as follows:
 ```

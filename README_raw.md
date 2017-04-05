@@ -47,6 +47,18 @@ $$
 \text{score} = \frac{1}{N} \sum_{i} e_{i}
 $$
 
+## Using Additional Data
+We discourage the use of additional training or validation images, including but not limited to:   
+   * Scraping the iNaturalist website or using the iNaturalist api to collect more training data or validation data
+   * Scraping images from web search engines to collect more training data or validation data
+   * Scraping photo hosting websites (e.g. Flickr) to collect more training data or validation data
+
+If you are compelled to add additional images to your training or validation sets you must specify this when submitting your results. The organizers of the competition reserve the right to remove teams that use increased training and validation sets.   
+
+Collecting additional annotations (e.g. bounding boxes) on the provided training dataset is allowed. Teams should specify that they collected additional annotations when submitting results. 
+
+Annotating the test set in any way (e.g. category labels, bounding boxes), is not allowed.
+
 ## Annotation Format
 We closely follow the annotation format of the [COCO dataset](http://mscoco.org/dataset/#download). The annotations are stored in the [JSON format](http://www.json.org/) and are organized as follows:
 ```
