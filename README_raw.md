@@ -6,6 +6,14 @@ Please open an issue if you have questions or problems with the dataset.
 # 2017 Competition
 The 2017 competition, sponsored by Google, is part of the [FGVC^4 workshop](http://fgvc.org) at [CVPR](http://cvpr2017.thecvf.com/). 
 
+## Dates
+|||
+|------|---------------|
+Data Released|April 5, 2017|
+Submission Server Open |June 2017|
+Submission Deadline|June 30, 2017|
+Winners Announced|July 21, 2017|
+
 ## Details
 
 There are a total of 5,089 categories in the dataset, with 579,184 training images and 95,986 validation images. For the training set, the distribution of images per category follows the observation frequency of that category by the iNaturalist community. Therefore, there is a non-uniform distribution of images per category. 
