@@ -8,7 +8,7 @@ The 2017 competition, sponsored by Google, is part of the [FGVC^4 workshop](http
 
 ## Details
 
-There are a total of 5,089 categories in the dataset, with 579,184 training images and 95,986 validation images. For the training set, the distribution of images per category follows the observation frequecy of that category by the iNaturalist community. Therefore, there is a non-uniform distribution of images per category. 
+There are a total of 5,089 categories in the dataset, with 579,184 training images and 95,986 validation images. For the training set, the distribution of images per category follows the observation frequency of that category by the iNaturalist community. Therefore, there is a non-uniform distribution of images per category. 
 
 
 | Super Category |	Category Count	| Train Images |	Val Images |
@@ -30,7 +30,7 @@ Protozoa|4|308|73|
 |Total|13|579,184|95,986|
 
 
-## Evalutation
+## Evaluation
 We follow a similar metric to the classification tasks of the [ILSVRC](http://image-net.org/challenges/LSVRC/2016/index#scene). For each image $i$, an algorithm will produce 5 labels $l_{ij}$, $j=1,\ldots,5$. We allow 5 labels because some categories are distinguished with additional data provided by the observer, such as latitude, longitude and date. It might also be the case that multiple categories occur in an image (e.g. a photo of a bee on a flower). For this competition each image has one ground truth label $g_i$, and the error for that image is:
 $$
 e_i = \min_{j}d(l_{ij}, g_i)
@@ -123,8 +123,8 @@ By downloading this dataset you agree to the following terms:
 1. You will abide by the [iNaturalist Terms of Service](https://www.inaturalist.org/pages/terms)
 2. You will use the data only for non-commercial research and educational purposes.
 3. You will NOT distribute the above images.
-4. The California Insitute of Technology makes no representations or warranties regarding the data, including but not limited to warranties of non-infringement or fitness for a particular purpose.
-5. You accept full responsibility for your use of the data and shall defend and indemnify the California Insitute of Technology, including its employees, officers and agents, against any and all claims arising from your use of the data, including but not limited to your use of any copies of copyrighted images that you may create from the data.
+4. The California Institute of Technology makes no representations or warranties regarding the data, including but not limited to warranties of non-infringement or fitness for a particular purpose.
+5. You accept full responsibility for your use of the data and shall defend and indemnify the California Institute of Technology, including its employees, officers and agents, against any and all claims arising from your use of the data, including but not limited to your use of any copies of copyrighted images that you may create from the data.
 
 ## Data
 
