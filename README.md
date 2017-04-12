@@ -128,6 +128,11 @@ By downloading this dataset you agree to the following terms:
 
 Download the dataset files here:
   * [Training and validation images [186GB]](http://www.vision.caltech.edu/~gvanhorn/datasets/inaturalist/fgvc4_competition/train_val_images.tar.gz)
-      * Images have a max dimension of 800px
+      * An alternate download link is available [here](https://www.dropbox.com/s/bfo7ee661llknwo/train_val_images.tar.gz?dl=1)
+      * Running `md5sum` on the tar.gz file should produce `7c784ea5e424efaec655bd392f87301f  train_val_images.tar.gz`
+      * Images have a max dimension of 800px and have been converted to JPEG format
       * Untaring the images creates a directory structure like `train_val_images/super category/category/image.jpg`. This may take a while.
   * [Training and validation annotations [26MB]](http://www.vision.caltech.edu/~gvanhorn/datasets/inaturalist/fgvc4_competition/train_val2017.zip)
+  
+  * [Sample images [1.2GB]](https://www.dropbox.com/s/vqm5a2ssqjk6yqm/train_val_images_mini.tar.gz?dl=1)
+     * This is a subset of the category images that you can download for easy viewing. Contains 3 sample categories for each of the 13 super categories.
