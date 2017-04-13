@@ -35,7 +35,7 @@ Actinopterygii|53|1,982|637|
 Chromista|9|398|144|
 Protozoa|4|308|73|
 |||||
-|Total|13|579,184|95,986|
+|Total|5,089|579,184|95,986|
 
 
 ## Evaluation
