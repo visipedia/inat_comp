@@ -144,5 +144,5 @@ Download the dataset files here:
       * Untaring the images creates a directory structure like `train_val_images/super category/category/image.jpg`. This may take a while.
   * [Training and validation annotations [26MB]](http://www.vision.caltech.edu/~gvanhorn/datasets/inaturalist/fgvc4_competition/train_val2017.zip)
   
-  * [Sample images [1.2GB]](https://www.dropbox.com/s/vqm5a2ssqjk6yqm/train_val_images_mini.tar.gz?dl=1)
+  * [Sample images [1.2GB]](https://s3-us-west-2.amazonaws.com/inaturalist-fgvc-competition-2017/train_val_images_mini.tar.gz)
      * This is a subset of the category images that you can download for easy viewing. Contains 3 sample categories for each of the 13 super categories.
