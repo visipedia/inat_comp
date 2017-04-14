@@ -138,11 +138,21 @@ By downloading this dataset you agree to the following terms:
 
 Download the dataset files here:
   * [Training and validation images [186GB]](http://www.vision.caltech.edu/~gvanhorn/datasets/inaturalist/fgvc4_competition/train_val_images.tar.gz)
-      * An alternate (potentially faster) download link is available [here [186GB]](https://s3-us-west-2.amazonaws.com/inaturalist-fgvc-competition-2017/train_val_images.tar.gz).
+      * Alternate links for different parts of the world:
+          * [North America [186GB]](https://storage.googleapis.com/us_inat_data/train_val/train_val_images.tar.gz)
+          * [Asia [186GB]](https://storage.googleapis.com/asia_inat_data/train_val/train_val_images.tar.gz)
+          * [Europe [186GB]](https://storage.googleapis.com/eu_inat_data/train_val/train_val_images.tar.gz)
       * Running `md5sum` on the tar.gz file should produce `7c784ea5e424efaec655bd392f87301f  train_val_images.tar.gz`
       * Images have a max dimension of 800px and have been converted to JPEG format
       * Untaring the images creates a directory structure like `train_val_images/super category/category/image.jpg`. This may take a while.
   * [Training and validation annotations [26MB]](http://www.vision.caltech.edu/~gvanhorn/datasets/inaturalist/fgvc4_competition/train_val2017.zip)
-  
-  * [Sample images [1.2GB]](https://s3-us-west-2.amazonaws.com/inaturalist-fgvc-competition-2017/train_val_images_mini.tar.gz)
-     * This is a subset of the category images that you can download for easy viewing. Contains 3 sample categories for each of the 13 super categories.
+      * Alternate links for different parts of the world:
+          * [North America [26MB]](https://storage.googleapis.com/us_inat_data/train_val/train_val2017.zip)
+          * [Asia [26MB]](https://storage.googleapis.com/asia_inat_data/train_val/train_val2017.zip)
+          * [Europe [26MB]](https://storage.googleapis.com/eu_inat_data/train_val/train_val2017.zip)
+  * Sample images
+      * This is a subset of the category images that you can download for easy viewing. Contains 3 sample categories for each of the 13 super categories.
+      * Links for different parts of the world:
+          * [North America [1.2GB]](https://storage.googleapis.com/us_inat_data/train_val/train_val_images_mini.tar.gz)
+          * [Asia [1.2GB]](https://storage.googleapis.com/asia_inat_data/train_val/train_val_images_mini.tar.gz)
+          * [Europe [1.2GB]](https://storage.googleapis.com/eu_inat_data/train_val/train_val_images_mini.tar.gz)
