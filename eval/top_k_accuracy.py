@@ -58,8 +58,8 @@ def read_submission_file(submission_file, k):
         reader = csv.DictReader(csvfile)
         for row in reader:
 
-            image_id = row['image_id']
-            preds = row['predictions']
+            image_id = row['id']
+            preds = row['predicted']
 
             preds = preds.strip().split(' ')
             if len(preds) < k:
@@ -95,8 +95,8 @@ def read_solution_file(solution_file):
     with open(solution_file) as csvfile:
         reader = csv.DictReader(csvfile)
         for row in reader:
-            image_id = row['image_id']
-            true_label = row['truth']
+            image_id = row['id']
+            true_label = row['expected']
             usage = row['usage']
 
             if usage == 'Public':
