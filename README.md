@@ -1,10 +1,10 @@
 ![Banner](https://rawgit.com/visipedia/inat_comp/master/assets/banner.jpg)
 
-# iNaturalist Competition 
+# iNaturalist Competition
 Please open an issue if you have questions or problems with the dataset.
 
 # 2017 Competition
-The 2017 competition, sponsored by Google, is part of the [FGVC^4 workshop](http://fgvc.org) at [CVPR](http://cvpr2017.thecvf.com/). 
+The 2017 competition, sponsored by Google, is part of the [FGVC^4 workshop](http://fgvc.org) at [CVPR](http://cvpr2017.thecvf.com/).
 
 ## Dates
 |||
@@ -16,7 +16,7 @@ Winners Announced|July 21, 2017|
 
 ## Details
 
-There are a total of 5,089 categories in the dataset, with 579,184 training images and 95,986 validation images. For the training set, the distribution of images per category follows the observation frequency of that category by the iNaturalist community. Therefore, there is a non-uniform distribution of images per category. Example images, along with their unique [GBIF](http://www.gbif.org/) ID numbers (where available), can be viewed [here](https://docs.google.com/spreadsheets/d/1JHn6J_9HBYyN5kaVrH1qcc3VMyxOsV2II8BvSwufM54). 
+There are a total of 5,089 categories in the dataset, with 579,184 training images and 95,986 validation images. For the training set, the distribution of images per category follows the observation frequency of that category by the iNaturalist community. Therefore, there is a non-uniform distribution of images per category. Example images, along with their unique [GBIF](http://www.gbif.org/) ID numbers (where available), can be viewed [here](https://docs.google.com/spreadsheets/d/1JHn6J_9HBYyN5kaVrH1qcc3VMyxOsV2II8BvSwufM54).
 
 
 | Super Category |	Category Count	| Train Images |	Val Images |
@@ -42,7 +42,7 @@ Protozoa|4|308|73|
 We follow a similar metric to the classification tasks of the [ILSVRC](http://image-net.org/challenges/LSVRC/2016/index#scene). For each image <img src="https://rawgit.com/visipedia/inat_comp/master/svgs/77a3b857d53fb44e33b53e4c8b68351a.svg?invert_in_darkmode" align=middle width=5.642109pt height=21.60213pt/>, an algorithm will produce 5 labels <img src="https://rawgit.com/visipedia/inat_comp/master/svgs/655bedbaf4a65f397b5041d0fdecde4c.svg?invert_in_darkmode" align=middle width=15.601905pt height=22.74591pt/>, <img src="https://rawgit.com/visipedia/inat_comp/master/svgs/6d0aa77223bd2246e5cdd2a422d9e584.svg?invert_in_darkmode" align=middle width=82.4274pt height=21.60213pt/>. We allow 5 labels because some categories are disambiguated with additional data provided by the observer, such as latitude, longitude and date. It might also be the case that multiple categories occur in an image (e.g. a photo of a bee on a flower). For this competition each image has one ground truth label <img src="https://rawgit.com/visipedia/inat_comp/master/svgs/681a37b53b66acbc455e39ca3e6f1c41.svg?invert_in_darkmode" align=middle width=12.444795pt height=14.10255pt/>, and the error for that image is:
 <p align="center"><img src="https://rawgit.com/visipedia/inat_comp/master/svgs/7a42826f81c53c77e0fef3c827238d25.svg?invert_in_darkmode" align=middle width=123.403665pt height=24.865665pt/></p>
 Where
-<p align="center"><img src="https://rawgit.com/visipedia/inat_comp/master/svgs/1b5971b5eaf03547d39e224e9cb8bd43.svg?invert_in_darkmode" align=middle width=190.2021pt height=49.13139pt/></p>
+<p align="center"><img src="https://rawgit.com/visipedia/inat_comp/master/svgs/7a45c501d5042bd031a267f008fa2ae6.svg?invert_in_darkmode" align=middle width=190.2021pt height=49.13139pt/></p>
 
 The overall error score for an algorithm is the average error over all <img src="https://rawgit.com/visipedia/inat_comp/master/svgs/f9c4988898e7f532b9f826a75014ed3c.svg?invert_in_darkmode" align=middle width=14.94405pt height=22.38192pt/> test images:
 <p align="center"><img src="https://rawgit.com/visipedia/inat_comp/master/svgs/444adcac0c7cbb4a8419ee1484625349.svg?invert_in_darkmode" align=middle width=118.05123pt height=41.069655pt/></p>
@@ -53,7 +53,7 @@ Participants are restricted to train their algorithms on iNaturalist 2017 train 
 
 The general rule is that we want participants to use only the provided training and validation images to train a model to classify the test images. We do not want participants crawling the web in search of additional data for the target categories. Participants should be in the mindset that this is the only data available for those categories.
 
-Participants are allowed to collect additional annotations (e.g. bounding boxes) on the provided training and validation sets. Teams should specify that they collected additional annotations when submitting results. 
+Participants are allowed to collect additional annotations (e.g. bounding boxes) on the provided training and validation sets. Teams should specify that they collected additional annotations when submitting results.
 
 ## Annotation Format
 We closely follow the annotation format of the [COCO dataset](http://mscoco.org/dataset/#download). The annotations are stored in the [JSON format](http://www.json.org/) and are organized as follows:
@@ -64,7 +64,7 @@ We closely follow the annotation format of the [COCO dataset](http://mscoco.org/
   "categories" : [category],
   "annotations" : [annotation],
   "licenses" : [license]
-}  
+}
 
 info{
   "year" : int,
@@ -104,15 +104,14 @@ license{
 ```
 
 ## Submission Format
-*TBD*
-The submission format is still being determined. It may look similar to:
+
+The submission format for the Kaggle competition is a csv file with the following format:
 ```
-[{
-  "image_id" : int,
-  "category_id" : int,
-  "score" : float
-}]
+id,predicted
+12345,0 78 23 3 42
+67890,83 13 42 0 21
 ```
+The `id` column corresponds to the test image id. The `predicted` column corresponds to 5 category ids, separated by spaces. You should have one row for each test image.
 
 ## Terms of Use
 
@@ -146,3 +145,15 @@ Download the dataset files here:
           * [North America [1.2GB]](https://storage.googleapis.com/us_inat_data/train_val/train_val_images_mini.tar.gz)
           * [Asia [1.2GB]](https://storage.googleapis.com/asia_inat_data/train_val/train_val_images_mini.tar.gz)
           * [Europe [1.2GB]](https://storage.googleapis.com/eu_inat_data/train_val/train_val_images_mini.tar.gz)
+  * [Test images [53GB]](http://www.vision.caltech.edu/~gvanhorn/datasets/inaturalist/fgvc4_competition/test2017.tar.gz)
+      * Alternative links for different parts of the world:
+          * [North America [53GB]](https://storage.googleapis.com/us_inat_data/test/test2017_images.tar.gz)
+          * [Asia [53GB]](https://storage.googleapis.com/asia_inat_data/test/test2017_images.tar.gz)
+          * [Europe [53GB]](https://storage.googleapis.com/eu_inat_data/test/test2017_images.tar.gz)
+      * Running `md5sum` on the tar.gz file should produce `7d9b096fa1cd94d67a0fa779ea301234  test2017.tar.gz`
+      * Images have a max dimension of 800px and have been converted to JPEG format
+  * [Test image info [6.3MB]](http://www.vision.caltech.edu/~gvanhorn/datasets/inaturalist/fgvc4_competition/test2017.zip)
+      * Alternative links for different parts of the world:
+          * [North America [6.3MB]](https://storage.googleapis.com/us_inat_data/test/test2017.zip)
+          * [Asia [6.3MB]](https://storage.googleapis.com/asia_inat_data/test/test2017.zip)
+          * [Europe [6.3MB]](https://storage.googleapis.com/eu_inat_data/test/test2017.zip)
