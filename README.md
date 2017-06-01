@@ -6,12 +6,15 @@ Please open an issue if you have questions or problems with the dataset.
 # 2017 Competition
 The 2017 competition, sponsored by Google, is part of the [FGVC^4 workshop](http://fgvc.org) at [CVPR](http://cvpr2017.thecvf.com/).
 
+## Kaggle
+We are using Kaggle to host the leaderboard. Checkout the competition page [here](https://www.kaggle.com/c/inaturalist-challenge-at-fgvc-2017).
+
 ## Dates
 |||
 |------|---------------|
 Data Released|April 5, 2017|
-Submission Server Open |June 2017|
-Submission Deadline|June 30, 2017|
+[Submission Server Open](https://www.kaggle.com/c/inaturalist-challenge-at-fgvc-2017) |June 1, 2017|
+Submission Deadline|July 7, 2017|
 Winners Announced|July 21, 2017|
 
 ## Details
