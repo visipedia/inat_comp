@@ -1,10 +1,9 @@
 ![Banner](https://rawgit.com/visipedia/inat_comp/2018/assets/banner2018.jpg)
 
-# iNaturalist Competition
-Please open an issue if you have questions or problems with the dataset.
-
-# 2018 Competition
+# iNaturalist 2018 Competition
 The 2018 competition is part of the [FGVC^5 workshop](http://fgvc.org) at [CVPR](http://cvpr2018.thecvf.com/).
+
+Please open an issue if you have questions or problems with the dataset.
 
 ## Kaggle
 We are using Kaggle to host the leaderboard. Checkout the competition page [here]().
@@ -57,10 +56,10 @@ The overall error score for an algorithm is the average error over all <img src=
 The 2018 competition differs from the [2017 Competition](README_2017.md) in several ways:
 
 ### Species Only
-The 2017 dataset categories represented several taxonomic ranks. The 2018 categories are all species.
+The 2017 dataset categories contained mostly species, but also had a few additional taxonomic ranks (e.g. genus, subspecies, and variety). The 2018 categories are all species.
 
 ### Evaluation on Tail Species Only
-For the 2017 competition, participants were evaluated on all 5k categories. For the 2018 competition we are only evaluating participants on species from the *tail*. Participants are encouraged to use the species from the head in novel ways to increase classification performance on species from the tail.
+For the 2017 competition, participants were evaluated on all 5k categories. The 2017 competitors acheived impressive classification scores for categories with a large number of training images. For the 2018 competition we are only evaluating participants on species from the *tail*. Participants are encouraged to use the species from the head in novel ways to increase classification performance on species from the tail.
 
 ### Taxonomy Information & Obfuscation
 The 2018 dataset contains kingdom, phylum, class, order, family, and genus taxonomic information for all species. However, we have obfuscated all taxonomic names to hinder participants from constructing web search terms to collect additional data.
