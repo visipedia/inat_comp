@@ -1,4 +1,4 @@
-![Banner](https://rawgit.com/visipedia/inat_comp/master/assets/banner2018.jpg)
+![Banner](https://rawgit.com/visipedia/inat_comp/2018/assets/banner2018.jpg)
 
 # iNaturalist Competition
 Please open an issue if you have questions or problems with the dataset.
@@ -40,9 +40,9 @@ Bacteria|1|16|3|
 |||||
 Total|8,142|462,624|76,381|
 
-![Train Distribution](https://rawgit.com/visipedia/inat_comp/master/assets/train_distribution2018.png)
+![Train Distribution](https://rawgit.com/visipedia/inat_comp/2018/assets/train_distribution2018.png)
 
-![Val Distribution](https://rawgit.com/visipedia/inat_comp/master/assets/val_distribution2018.png)
+![Val Distribution](https://rawgit.com/visipedia/inat_comp/2018/assets/val_distribution2018.png)
 
 ## Evaluation
 Participants will only be evaluated on *tail species*. We follow a similar metric to the classification tasks of the [ILSVRC](http://image-net.org/challenges/LSVRC/2016/index#scene). For each image $i$, an algorithm will produce 5 labels $l_{ij}$, $j=1,\ldots,5$. We allow 5 labels because some categories are disambiguated with additional data provided by the observer, such as latitude, longitude and date. It might also be the case that multiple categories occur in an image (e.g. a photo of a bee on a flower). For this competition each image has one ground truth label $g_i$, and the error for that image is:
