@@ -1,48 +1,51 @@
-![Banner](https://rawgit.com/visipedia/inat_comp/master/assets/banner.jpg)
+![Banner](https://rawgit.com/visipedia/inat_comp/master/assets/banner2018.jpg)
 
 # iNaturalist Competition
 Please open an issue if you have questions or problems with the dataset.
 
-# 2017 Competition
-The 2017 competition, sponsored by Google, is part of the [FGVC^4 workshop](http://fgvc.org) at [CVPR](http://cvpr2017.thecvf.com/).
+# 2018 Competition
+The 2018 competition is part of the [FGVC^5 workshop](http://fgvc.org) at [CVPR](http://cvpr2018.thecvf.com/).
 
 ## Kaggle
-We are using Kaggle to host the leaderboard. Checkout the competition page [here](https://www.kaggle.com/c/inaturalist-challenge-at-fgvc-2017).
+We are using Kaggle to host the leaderboard. Checkout the competition page [here]().
 
 ## Dates
 |||
 |------|---------------|
-Data Released|April 5, 2017|
-[Submission Server Open](https://www.kaggle.com/c/inaturalist-challenge-at-fgvc-2017) |June 1, 2017|
-Submission Deadline|July 7, 2017|
-Winners Announced|July 21, 2017|
+Data Released|February, 2018|
+Submission Server Open |February, 2018|
+Submission Deadline|June, 2018|
+Winners Announced|June, 2018|
 
 ## Details
 
-There are a total of 5,089 categories in the dataset, with 579,184 training images and 95,986 validation images. For the training set, the distribution of images per category follows the observation frequency of that category by the iNaturalist community. Therefore, there is a non-uniform distribution of images per category. Example images, along with their unique [GBIF](http://www.gbif.org/) ID numbers (where available), can be viewed [here](https://docs.google.com/spreadsheets/d/1JHn6J_9HBYyN5kaVrH1qcc3VMyxOsV2II8BvSwufM54).
-
+There are a total of 8,142 species in the dataset, with 462,624 training and 76,381 validation images. The species are split into "head" and "tail" groups, with 2,189 species falling into the head group and 5,953 species in the tail group. Each species in the head group has at least 29 and at most 3,582 training images. Each species in the tail group has at least 2 and at most 28 training images.
 
 | Super Category |	Category Count	| Train Images |	Val Images |
 |------|---------------|-------------|---------------|
-Plantae|2,101|158,407|38,206|
-Insecta|1,021|100,479|18,076|
-Aves|964|214,295|21,226|
-Reptilia|289|35,201|5,680|
-Mammalia|186|29,333|3,490|
-Fungi|121|5,826|1,780|
-Amphibia|115|15,318|2,385|
-Mollusca|93|7,536|1,841|
-Animalia|77|5,228|1,362|
-Arachnida|56|4,873|1,086|
-Actinopterygii|53|1,982|637|
-Chromista|9|398|144|
-Protozoa|4|308|73|
+Plantae|2,917|118,800|26,868|
+Insecta|2,031|91,145|16,082|
+Aves|1,258|161,736|17,729|
+Actinopterygii|369|7,835|1,347|
+Fungi|321|6,864|1,422|
+Reptilia|284|24,724|4,530|
+Mollusca|262|8,007|1,501|
+Mammalia|234|21,506|2,794|
+Animalia|178|5,966|1,196|
+Amphibia|144|11,156|1,783|
+Arachnida|114|4,037|887|
+Chromista|25|621|174|
+Protozoa|4|211|65|
+Bacteria|1|16|3|
 |||||
-|Total|5,089|579,184|95,986|
+Total|8,142|462,624|76,381|
 
+![Train Distribution](https://rawgit.com/visipedia/inat_comp/master/assets/train_distribution2018.png)
+
+![Val Distribution](https://rawgit.com/visipedia/inat_comp/master/assets/val_distribution2018.png)
 
 ## Evaluation
-We follow a similar metric to the classification tasks of the [ILSVRC](http://image-net.org/challenges/LSVRC/2016/index#scene). For each image $i$, an algorithm will produce 5 labels $l_{ij}$, $j=1,\ldots,5$. We allow 5 labels because some categories are disambiguated with additional data provided by the observer, such as latitude, longitude and date. It might also be the case that multiple categories occur in an image (e.g. a photo of a bee on a flower). For this competition each image has one ground truth label $g_i$, and the error for that image is:
+Participants will only be evaluated on *tail species*. We follow a similar metric to the classification tasks of the [ILSVRC](http://image-net.org/challenges/LSVRC/2016/index#scene). For each image $i$, an algorithm will produce 5 labels $l_{ij}$, $j=1,\ldots,5$. We allow 5 labels because some categories are disambiguated with additional data provided by the observer, such as latitude, longitude and date. It might also be the case that multiple categories occur in an image (e.g. a photo of a bee on a flower). For this competition each image has one ground truth label $g_i$, and the error for that image is:
 $$
 e_i = \min_{j}d(l_{ij}, g_i)
 $$
@@ -60,16 +63,28 @@ $$
 \text{score} = \frac{1}{N} \sum_{i} e_{i}
 $$
 
+## Differences from iNaturalist 2017 Competition
+The 2018 competition differs from the [2017 Competition](README_2017.md) in several ways:
+
+### Species Only
+The 2017 dataset categories represented several taxonomic ranks. The 2018 categories are all species.
+
+### Evaluation on Tail Species Only
+For the 2017 competition, participants were evaluated on all 5k categories. For the 2018 competition we are only evaluating participants on species from the *tail*. Participants are encouraged to use the species from the head in novel ways to increase classification performance on species from the tail.
+
+### Taxonomy Information & Obfuscation
+The 2018 dataset contains kingdom, phylum, class, order, family, and genus taxonomic information for all species. However, we have obfuscated all taxonomic names to hinder participants from constructing web search terms to collect additional data.
+
 ## Guidelines
 
-Participants are restricted to train their algorithms on iNaturalist 2017 train and validation sets. Pretrained models may be used to construct the algorithms (e.g. ImageNet pretrained models) as long as participants do not actively collect additional data for the target categories of the iNaturalist 2017 competition. Please specify any and all external data used for training when uploading results.
+Participants are welcome to use the [iNaturalist 2017 Competition dataset](README_2017.md) as an additional data source. There is an overlap bewteen the 2017 categories and the 2018 *head species*, however we do not provide a mapping from the 2017 categories to the 2018 categories. Besides the 2017 dataset, participants are restricted from collecting additional natural world data for the 2018 competition. Pretrained models may be used to construct the algorithms (e.g. ImageNet pretrained models, or iNaturalist 2017 pretrained models). Please specify any and all external data used for training when uploading results.
 
-The general rule is that we want participants to use only the provided training and validation images to train a model to classify the test images. We do not want participants crawling the web in search of additional data for the target categories. Participants should be in the mindset that this is the only data available for those categories.
+The general rule is that participants should only use the provided training and validation images to train a model to classify the test images. We do not want participants crawling the web in search of additional data for the target categories. Participants should be in the mindset that this is the only data available for these categories.
 
-Participants are allowed to collect additional annotations (e.g. bounding boxes) on the provided training and validation sets. Teams should specify that they collected additional annotations when submitting results.
+Participants are allowed to collect additional annotations (e.g. bounding boxes, keypoints) on the provided training and validation sets. Teams should specify that they collected additional annotations when submitting results.
 
 ## Annotation Format
-We closely follow the annotation format of the [COCO dataset](http://mscoco.org/dataset/#download). The annotations are stored in the [JSON format](http://www.json.org/) and are organized as follows:
+We follow the annotation format of the [COCO dataset](http://mscoco.org/dataset/#download) and add additional fields. The annotations are stored in the [JSON format](http://www.json.org/) and are organized as follows:
 ```
 {
   "info" : info,
@@ -94,19 +109,28 @@ image{
   "height" : int,
   "file_name" : str,
   "license" : int,
-  "rights_holder" : str
+  "rights_holder" : str,
+  "tag" : "tail" or "head"
 }
 
 category{
   "id" : int,
   "name" : str,
   "supercategory" : str,
+  "kingdom" : str,
+  "phylum" : str,
+  "class" : str,
+  "order" : str,
+  "family" : str,
+  "genus" : str,
+  "tag" : "tail" or "head"
 }
 
 annotation{
   "id" : int,
   "image_id" : int,
-  "category_id" : int
+  "category_id" : int,
+  "tag" : "tail" or "head"
 }
 
 license{
@@ -115,6 +139,12 @@ license{
   "url" : str
 }
 ```
+
+## Annotation Notes
+
+We have added a field called `tag` to the `image`, `category` and `annotation` objects. This field will have the value `"tail"` or `"head"` and acts a convenient way to split the dataset into the head and tail groups.
+
+Since participants will only be evaluated on species from the tail, we have ordered the categories such that the tail species are first. Therefore tail species have category ids in the range [0, 5952]. This means that a submission file created by a model trained *only* on the tail species will be valid for upload to Kaggle.
 
 ## Submission Format
 
@@ -139,34 +169,39 @@ By downloading this dataset you agree to the following terms:
 ## Data
 
 Download the dataset files here:
-  * [Training and validation images [186GB]](http://www.vision.caltech.edu/~gvanhorn/datasets/inaturalist/fgvc4_competition/train_val_images.tar.gz)
+  * [All training and validation images [186GB]]()
       * Alternate links for different parts of the world:
-          * [North America [186GB]](https://storage.googleapis.com/us_inat_data/train_val/train_val_images.tar.gz)
-          * [Asia [186GB]](https://storage.googleapis.com/asia_inat_data/train_val/train_val_images.tar.gz)
-          * [Europe [186GB]](https://storage.googleapis.com/eu_inat_data/train_val/train_val_images.tar.gz)
-      * Running `md5sum` on the tar.gz file should produce `7c784ea5e424efaec655bd392f87301f  train_val_images.tar.gz`
+          * [North America [186GB]]()
+          * [Asia [186GB]]()
+          * [Europe [186GB]]()
+      * Running `md5sum` on the tar.gz file should produce `blah`
       * Images have a max dimension of 800px and have been converted to JPEG format
-      * Untaring the images creates a directory structure like `train_val_images/super category/category/image.jpg`. This may take a while.
-  * [Training and validation annotations [26MB]](http://www.vision.caltech.edu/~gvanhorn/datasets/inaturalist/fgvc4_competition/train_val2017.zip)
+      * Untaring the images creates a directory structure like `train_val2018/super category/category/image.jpg`. This may take a while.
+      * Image Subsets
+          * [Head training and validation images]()
+              * [North America [186GB]]()
+              * [Asia [186GB]]()
+              * [Europe [186GB]]()
+              * Running `md5sum` on the tar.gz file should produce `blah`
+          * [Tail training and validation images]()
+              * [North America [186GB]]()
+              * [Asia [186GB]]()
+              * [Europe [186GB]]()
+              * Running `md5sum` on the tar.gz file should produce `blah`
+  * [Training and validation annotations [26MB]]()
       * Alternate links for different parts of the world:
-          * [North America [26MB]](https://storage.googleapis.com/us_inat_data/train_val/train_val2017.zip)
-          * [Asia [26MB]](https://storage.googleapis.com/asia_inat_data/train_val/train_val2017.zip)
-          * [Europe [26MB]](https://storage.googleapis.com/eu_inat_data/train_val/train_val2017.zip)
-  * Sample images
-      * This is a subset of the category images that you can download for easy viewing. Contains 3 sample categories for each of the 13 super categories.
-      * Links for different parts of the world:
-          * [North America [1.2GB]](https://storage.googleapis.com/us_inat_data/train_val/train_val_images_mini.tar.gz)
-          * [Asia [1.2GB]](https://storage.googleapis.com/asia_inat_data/train_val/train_val_images_mini.tar.gz)
-          * [Europe [1.2GB]](https://storage.googleapis.com/eu_inat_data/train_val/train_val_images_mini.tar.gz)
-  * [Test images [53GB]](http://www.vision.caltech.edu/~gvanhorn/datasets/inaturalist/fgvc4_competition/test2017.tar.gz)
+          * [North America [26MB]]()
+          * [Asia [26MB]]()
+          * [Europe [26MB]]()
+  * [Test images [53GB]]()
       * Alternative links for different parts of the world:
-          * [North America [53GB]](https://storage.googleapis.com/us_inat_data/test/test2017_images.tar.gz)
-          * [Asia [53GB]](https://storage.googleapis.com/asia_inat_data/test/test2017_images.tar.gz)
-          * [Europe [53GB]](https://storage.googleapis.com/eu_inat_data/test/test2017_images.tar.gz)
-      * Running `md5sum` on the tar.gz file should produce `7d9b096fa1cd94d67a0fa779ea301234  test2017.tar.gz`
+          * [North America [53GB]]()
+          * [Asia [53GB]]()
+          * [Europe [53GB]]()
+      * Running `md5sum` on the tar.gz file should produce `blah`
       * Images have a max dimension of 800px and have been converted to JPEG format
-  * [Test image info [6.3MB]](http://www.vision.caltech.edu/~gvanhorn/datasets/inaturalist/fgvc4_competition/test2017.zip)
+  * [Test image info [6.3MB]]()
       * Alternative links for different parts of the world:
-          * [North America [6.3MB]](https://storage.googleapis.com/us_inat_data/test/test2017.zip)
-          * [Asia [6.3MB]](https://storage.googleapis.com/asia_inat_data/test/test2017.zip)
-          * [Europe [6.3MB]](https://storage.googleapis.com/eu_inat_data/test/test2017.zip)
+          * [North America [6.3MB]]()
+          * [Asia [6.3MB]]()
+          * [Europe [6.3MB]]()
