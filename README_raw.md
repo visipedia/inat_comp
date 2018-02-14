@@ -18,33 +18,29 @@ Winners Announced|June, 2018|
 
 ## Details
 
-There are a total of 8,142 species in the dataset, with 462,624 training and 76,381 validation images. The species are split into "head" and "tail" groups, with 2,189 species falling into the head group and 5,953 species in the tail group. Each species in the head group has at least 29 and at most 3,582 training images. Each species in the tail group has at least 2 and at most 28 training images.
+There are a total of 8,142 species in the dataset, with 437,513 training and 24,426 validation images.
 
-| Super Category |	Category Count	| Train Images |	Val Images |
-|------|---------------|-------------|---------------|
-Plantae|2,917|118,800|26,868|
-Insecta|2,031|91,145|16,082|
-Aves|1,258|161,736|17,729|
-Actinopterygii|369|7,835|1,347|
-Fungi|321|6,864|1,422|
-Reptilia|284|24,724|4,530|
-Mollusca|262|8,007|1,501|
-Mammalia|234|21,506|2,794|
-Animalia|178|5,966|1,196|
-Amphibia|144|11,156|1,783|
-Arachnida|114|4,037|887|
-Chromista|25|621|174|
-Protozoa|4|211|65|
+Plantae|2,917|118,800|8,751|
+Insecta|2,031|87,192|6,093|
+Aves|1,258|143,950|3,774|
+Actinopterygii|369|7,835|1,107|
+Fungi|321|6,864|963|
+Reptilia|284|22,754|852|
+Mollusca|262|8,007|786|
+Mammalia|234|20,104|702|
+Animalia|178|5,966|534|
+Amphibia|144|11,156|432|
+Arachnida|114|4,037|342|
+Chromista|25|621|75|
+Protozoa|4|211|12|
 Bacteria|1|16|3|
 |||||
-Total|8,142|462,624|76,381|
+Total|8,142|437,513|24,426|
 
-![Train Distribution](https://rawgit.com/visipedia/inat_comp/2018/assets/train_distribution2018.png)
-
-![Val Distribution](https://rawgit.com/visipedia/inat_comp/2018/assets/val_distribution2018.png)
+![Train Val Distribution](https://rawgit.com/visipedia/inat_comp/2018/assets/train_val_distribution2018.png)
 
 ## Evaluation
-Participants will only be evaluated on *tail species*. We follow a similar metric to the classification tasks of the [ILSVRC](http://image-net.org/challenges/LSVRC/2016/index#scene). For each image $i$, an algorithm will produce 5 labels $l_{ij}$, $j=1,\ldots,5$. We allow 5 labels because some categories are disambiguated with additional data provided by the observer, such as latitude, longitude and date. It might also be the case that multiple categories occur in an image (e.g. a photo of a bee on a flower). For this competition each image has one ground truth label $g_i$, and the error for that image is:
+We follow a similar metric to the classification tasks of the [ILSVRC](http://image-net.org/challenges/LSVRC/2016/index#scene). For each image $i$, an algorithm will produce 3 labels $l_{ij}$, $j=1,\ldots,5$. We allow 3 labels because some categories are disambiguated with additional data provided by the observer, such as latitude, longitude and date. It might also be the case that multiple categories occur in an image (e.g. a photo of a bee on a flower). For this competition each image has one ground truth label $g_i$, and the error for that image is:
 $$
 e_i = \min_{j}d(l_{ij}, g_i)
 $$
@@ -63,20 +59,20 @@ $$
 $$
 
 ## Differences from iNaturalist 2017 Competition
-The 2018 competition differs from the [2017 Competition](README_2017.md) in several ways:
+The 2018 competition differs from the [2017 Competition](2017/README.md) in several ways:
 
 ### Species Only
 The 2017 dataset categories contained mostly species, but also had a few additional taxonomic ranks (e.g. genus, subspecies, and variety). The 2018 categories are all species.
 
-### Evaluation on Tail Species Only
-For the 2017 competition, participants were evaluated on all 5k categories. The 2017 competitors acheived impressive classification scores for categories with a large number of training images. For the 2018 competition we are only evaluating participants on species from the *tail*. Participants are encouraged to use the species from the head in novel ways to increase classification performance on species from the tail.
-
 ### Taxonomy Information & Obfuscation
 The 2018 dataset contains kingdom, phylum, class, order, family, and genus taxonomic information for all species. However, we have obfuscated all taxonomic names to hinder participants from constructing web search terms to collect additional data.
 
+### Data Overlap
+The 2018 dataset contains some of the same species and images that are found in the 2017 dataset. However, we will not provide a mapping between the two datasets.
+
 ## Guidelines
 
-Participants are welcome to use the [iNaturalist 2017 Competition dataset](README_2017.md) as an additional data source. There is an overlap bewteen the 2017 categories and the 2018 *head species*, however we do not provide a mapping from the 2017 categories to the 2018 categories. Besides the 2017 dataset, participants are restricted from collecting additional natural world data for the 2018 competition. Pretrained models may be used to construct the algorithms (e.g. ImageNet pretrained models, or iNaturalist 2017 pretrained models). Please specify any and all external data used for training when uploading results.
+Participants are welcome to use the [iNaturalist 2017 Competition dataset](2017/README.md) as an additional data source. There is an overlap bewteen the 2017 species and the 2018 species, however we do not provide a mapping from the 2017 categories to the 2018 categories. Besides the 2017 dataset, participants are restricted from collecting additional natural world data for the 2018 competition. Pretrained models may be used to construct the algorithms (e.g. ImageNet pretrained models, or iNaturalist 2017 pretrained models). Please specify any and all external data used for training when uploading results.
 
 The general rule is that participants should only use the provided training and validation images to train a model to classify the test images. We do not want participants crawling the web in search of additional data for the target categories. Participants should be in the mindset that this is the only data available for these categories.
 
@@ -108,8 +104,7 @@ image{
   "height" : int,
   "file_name" : str,
   "license" : int,
-  "rights_holder" : str,
-  "tag" : "tail" or "head"
+  "rights_holder" : str
 }
 
 category{
@@ -121,15 +116,13 @@ category{
   "class" : str,
   "order" : str,
   "family" : str,
-  "genus" : str,
-  "tag" : "tail" or "head"
+  "genus" : str
 }
 
 annotation{
   "id" : int,
   "image_id" : int,
-  "category_id" : int,
-  "tag" : "tail" or "head"
+  "category_id" : int
 }
 
 license{
@@ -139,21 +132,15 @@ license{
 }
 ```
 
-## Annotation Notes
-
-We have added a field called `tag` to the `image`, `category` and `annotation` objects. This field will have the value `"tail"` or `"head"` and acts a convenient way to split the dataset into the head and tail groups.
-
-Since participants will only be evaluated on species from the tail, we have ordered the categories such that the tail species are first. Therefore tail species have category ids in the range [0, 5952]. This means that a submission file created by a model trained *only* on the tail species will be valid for upload to Kaggle.
-
 ## Submission Format
 
 The submission format for the Kaggle competition is a csv file with the following format:
 ```
 id,predicted
-12345,0 78 23 3 42
-67890,83 13 42 0 21
+12345,0 78 23
+67890,83 13 42
 ```
-The `id` column corresponds to the test image id. The `predicted` column corresponds to 5 category ids, separated by spaces. You should have one row for each test image.
+The `id` column corresponds to the test image id. The `predicted` column corresponds to 3 category ids, separated by spaces. You should have one row for each test image. Please sort your predictions from most confident to least, this will allow us to study top-1, top-2, and top-3 accuracy.
 
 ## Terms of Use
 
@@ -168,39 +155,42 @@ By downloading this dataset you agree to the following terms:
 ## Data
 
 Download the dataset files here:
-  * [All training and validation images [186GB]]()
-      * Alternate links for different parts of the world:
-          * [North America [186GB]]()
-          * [Asia [186GB]]()
-          * [Europe [186GB]]()
-      * Running `md5sum` on the tar.gz file should produce `blah`
+  * All training and validation images [120GB]]
+      * Links for different parts of the world:
+          * [North America]()
+          * [Asia]()
+          * [Europe]()
+      * Posterity Caltech [link]() (this will be slow)
+      * Running `md5sum train_val2018.tar.gz` should produce `b1c6952ce38f31868cc50ea72d066cc3`
       * Images have a max dimension of 800px and have been converted to JPEG format
       * Untaring the images creates a directory structure like `train_val2018/super category/category/image.jpg`. This may take a while.
-      * Image Subsets
-          * [Head training and validation images]()
-              * [North America [186GB]]()
-              * [Asia [186GB]]()
-              * [Europe [186GB]]()
-              * Running `md5sum` on the tar.gz file should produce `blah`
-          * [Tail training and validation images]()
-              * [North America [186GB]]()
-              * [Asia [186GB]]()
-              * [Europe [186GB]]()
-              * Running `md5sum` on the tar.gz file should produce `blah`
-  * [Training and validation annotations [26MB]]()
-      * Alternate links for different parts of the world:
-          * [North America [26MB]]()
-          * [Asia [26MB]]()
-          * [Europe [26MB]]()
-  * [Test images [53GB]]()
-      * Alternative links for different parts of the world:
-          * [North America [53GB]]()
-          * [Asia [53GB]]()
-          * [Europe [53GB]]()
-      * Running `md5sum` on the tar.gz file should produce `blah`
+  * Training annotations [26MB]
+      * Links for different parts of the world:
+          * [North America]()
+          * [Asia]()
+          * [Europe]()
+      * Posterity Caltech [link]()
+      * Running `md5sum train2018.json.tar.gz` should produce `blah`
+  * Validation annotations [26MB]
+      * Links for different parts of the world:
+          * [North America]()
+          * [Asia]()
+          * [Europe]()
+      * Posterity Caltech [link]()
+      * Running `md5sum val2018.json.tar.gz` should produce `blah`
+  * Test images [40GB]
+      * Links for different parts of the world:
+          * [North America]()
+          * [Asia]()
+          * [Europe]()
+      * Posterity Caltech [link]()
+      * Running `md5sum test2018.tar.gz` should produce `4b71d44d73e27475eefea68886c7d1b1`
       * Images have a max dimension of 800px and have been converted to JPEG format
-  * [Test image info [6.3MB]]()
-      * Alternative links for different parts of the world:
-          * [North America [6.3MB]]()
-          * [Asia [6.3MB]]()
-          * [Europe [6.3MB]]()
+      * Untaring the images creates a directory structure like `test2018/image.jpg`.
+  * Test image info [6.3MB]
+      * Links for different parts of the world:
+          * [North America]()
+          * [Asia]()
+          * [Europe]()
+      * Posterity Caltech [link]()
+      * Running `md5sum test2018.json.tar.gz` should produce `blah`
