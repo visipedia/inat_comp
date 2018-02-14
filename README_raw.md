@@ -17,9 +17,10 @@ Submission Deadline|June, 2018|
 Winners Announced|June, 2018|
 
 ## Details
-
 There are a total of 8,142 species in the dataset, with 437,513 training and 24,426 validation images.
 
+| Super Category |	Category Count	| Train Images |	Val Images |
+|------|---------------|-------------|---------------|
 Plantae|2,917|118,800|8,751|
 Insecta|2,031|87,192|6,093|
 Aves|1,258|143,950|3,774|
@@ -37,10 +38,10 @@ Bacteria|1|16|3|
 |||||
 Total|8,142|437,513|24,426|
 
-![Train Val Distribution](https://rawgit.com/visipedia/inat_comp/2018/assets/train_val_distribution2018.png)
+![Train Val Distribution](https://rawgit.com/visipedia/inat_comp/2018/assets/train_val_distribution.png)
 
 ## Evaluation
-We follow a similar metric to the classification tasks of the [ILSVRC](http://image-net.org/challenges/LSVRC/2016/index#scene). For each image $i$, an algorithm will produce 3 labels $l_{ij}$, $j=1,\ldots,5$. We allow 3 labels because some categories are disambiguated with additional data provided by the observer, such as latitude, longitude and date. It might also be the case that multiple categories occur in an image (e.g. a photo of a bee on a flower). For this competition each image has one ground truth label $g_i$, and the error for that image is:
+We follow a similar metric to the classification tasks of the [ILSVRC](http://image-net.org/challenges/LSVRC/2016/index#scene). For each image $i$, an algorithm will produce 3 labels $l_{ij}$, $j=1,\ldots,3$. We allow 3 labels because some categories are disambiguated with additional data provided by the observer, such as latitude, longitude and date. It might also be the case that multiple categories occur in an image (e.g. a photo of a bee on a flower). For this competition each image has one ground truth label $g_i$, and the error for that image is:
 $$
 e_i = \min_{j}d(l_{ij}, g_i)
 $$
@@ -68,11 +69,11 @@ The 2017 dataset categories contained mostly species, but also had a few additio
 The 2018 dataset contains kingdom, phylum, class, order, family, and genus taxonomic information for all species. However, we have obfuscated all taxonomic names to hinder participants from constructing web search terms to collect additional data.
 
 ### Data Overlap
-The 2018 dataset contains some of the same species and images that are found in the 2017 dataset. However, we will not provide a mapping between the two datasets.
+The 2018 dataset contains some species and images that are found in the 2017 dataset. However, we will not provide a mapping between the two datasets.
 
 ## Guidelines
 
-Participants are welcome to use the [iNaturalist 2017 Competition dataset](2017/README.md) as an additional data source. There is an overlap bewteen the 2017 species and the 2018 species, however we do not provide a mapping from the 2017 categories to the 2018 categories. Besides the 2017 dataset, participants are restricted from collecting additional natural world data for the 2018 competition. Pretrained models may be used to construct the algorithms (e.g. ImageNet pretrained models, or iNaturalist 2017 pretrained models). Please specify any and all external data used for training when uploading results.
+Participants are welcome to use the [iNaturalist 2017 Competition dataset](2017/README.md) as an additional data source. There is an overlap between the 2017 species and the 2018 species, however we do not provide a mapping between the two datasets. Besides using the 2017 dataset, participants are restricted from collecting additional natural world data for the 2018 competition. Pretrained models may be used to construct the algorithms (e.g. ImageNet pretrained models, or iNaturalist 2017 pretrained models). Please specify any and all external data used for training when uploading results.
 
 The general rule is that participants should only use the provided training and validation images to train a model to classify the test images. We do not want participants crawling the web in search of additional data for the target categories. Participants should be in the mindset that this is the only data available for these categories.
 
@@ -155,12 +156,12 @@ By downloading this dataset you agree to the following terms:
 ## Data
 
 Download the dataset files here:
-  * All training and validation images [120GB]]
+  * All training and validation images [120GB]
       * Links for different parts of the world:
           * [North America]()
           * [Asia]()
           * [Europe]()
-      * Posterity Caltech [link]() (this will be slow)
+      * Posterity [Caltech link](). Warning this will be slow.
       * Running `md5sum train_val2018.tar.gz` should produce `b1c6952ce38f31868cc50ea72d066cc3`
       * Images have a max dimension of 800px and have been converted to JPEG format
       * Untaring the images creates a directory structure like `train_val2018/super category/category/image.jpg`. This may take a while.
@@ -169,21 +170,21 @@ Download the dataset files here:
           * [North America]()
           * [Asia]()
           * [Europe]()
-      * Posterity Caltech [link]()
+      * Posterity [Caltech link]()
       * Running `md5sum train2018.json.tar.gz` should produce `blah`
   * Validation annotations [26MB]
       * Links for different parts of the world:
           * [North America]()
           * [Asia]()
           * [Europe]()
-      * Posterity Caltech [link]()
+      * Posterity [Caltech link]()
       * Running `md5sum val2018.json.tar.gz` should produce `blah`
   * Test images [40GB]
       * Links for different parts of the world:
           * [North America]()
           * [Asia]()
           * [Europe]()
-      * Posterity Caltech [link]()
+      * Posterity [Caltech link](). Warning this will be slow.
       * Running `md5sum test2018.tar.gz` should produce `4b71d44d73e27475eefea68886c7d1b1`
       * Images have a max dimension of 800px and have been converted to JPEG format
       * Untaring the images creates a directory structure like `test2018/image.jpg`.
@@ -192,5 +193,5 @@ Download the dataset files here:
           * [North America]()
           * [Asia]()
           * [Europe]()
-      * Posterity Caltech [link]()
+      * Posterity [Caltech link]()
       * Running `md5sum test2018.json.tar.gz` should produce `blah`
