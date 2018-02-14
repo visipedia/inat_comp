@@ -1,7 +1,7 @@
 ![Banner](https://rawgit.com/visipedia/inat_comp/2018/assets/banner2018.jpg)
 
 # iNaturalist 2018 Competition
-The 2018 competition is part of the [FGVC^5 workshop](http://fgvc.org) at [CVPR](http://cvpr2018.thecvf.com/).
+The 2018 competition is part of the [FGVC^5 workshop](https://sites.google.com/view/fgvc5/home) at [CVPR](http://cvpr2018.thecvf.com/).
 
 Please open an issue if you have questions or problems with the dataset.
 
@@ -41,13 +41,13 @@ Total|8,142|437,513|24,426|
 ![Train Val Distribution](https://rawgit.com/visipedia/inat_comp/2018/assets/train_val_distribution.png)
 
 ## Evaluation
-We follow a similar metric to the classification tasks of the [ILSVRC](http://image-net.org/challenges/LSVRC/2016/index#scene). For each image <img src="https://rawgit.com/gvanhorn38/inat_comp/2018/svgs/77a3b857d53fb44e33b53e4c8b68351a.svg?invert_in_darkmode" align=middle width=5.642109pt height=21.60213pt/>, an algorithm will produce 3 labels <img src="https://rawgit.com/gvanhorn38/inat_comp/2018/svgs/655bedbaf4a65f397b5041d0fdecde4c.svg?invert_in_darkmode" align=middle width=15.601905pt height=22.74591pt/>, <img src="https://rawgit.com/gvanhorn38/inat_comp/2018/svgs/946e592e2b2753a9272767ae3dd5b9a9.svg?invert_in_darkmode" align=middle width=82.4274pt height=21.60213pt/>. We allow 3 labels because some categories are disambiguated with additional data provided by the observer, such as latitude, longitude and date. It might also be the case that multiple categories occur in an image (e.g. a photo of a bee on a flower). For this competition each image has one ground truth label <img src="https://rawgit.com/gvanhorn38/inat_comp/2018/svgs/681a37b53b66acbc455e39ca3e6f1c41.svg?invert_in_darkmode" align=middle width=12.444795pt height=14.10255pt/>, and the error for that image is:
-<p align="center"><img src="https://rawgit.com/gvanhorn38/inat_comp/2018/svgs/7a42826f81c53c77e0fef3c827238d25.svg?invert_in_darkmode" align=middle width=123.403665pt height=24.865665pt/></p>
+We follow a similar metric to the classification tasks of the [ILSVRC](http://image-net.org/challenges/LSVRC/2016/index#scene). For each image <img src="https://rawgit.com/visipedia/inat_comp/2018/svgs/77a3b857d53fb44e33b53e4c8b68351a.svg?invert_in_darkmode" align=middle width=5.642109pt height=21.60213pt/>, an algorithm will produce 3 labels <img src="https://rawgit.com/visipedia/inat_comp/2018/svgs/655bedbaf4a65f397b5041d0fdecde4c.svg?invert_in_darkmode" align=middle width=15.601905pt height=22.74591pt/>, <img src="https://rawgit.com/visipedia/inat_comp/2018/svgs/946e592e2b2753a9272767ae3dd5b9a9.svg?invert_in_darkmode" align=middle width=82.4274pt height=21.60213pt/>. We allow 3 labels because some categories are disambiguated with additional data provided by the observer, such as latitude, longitude and date. For a small percentage of images, it might also be the case that multiple categories occur in an image (e.g. a photo of a bee on a flower). For this competition each image has one ground truth label <img src="https://rawgit.com/visipedia/inat_comp/2018/svgs/681a37b53b66acbc455e39ca3e6f1c41.svg?invert_in_darkmode" align=middle width=12.444795pt height=14.10255pt/>, and the error for that image is:
+<p align="center"><img src="https://rawgit.com/visipedia/inat_comp/2018/svgs/7a42826f81c53c77e0fef3c827238d25.svg?invert_in_darkmode" align=middle width=123.403665pt height=24.865665pt/></p>
 Where
-<p align="center"><img src="https://rawgit.com/gvanhorn38/inat_comp/2018/svgs/7a45c501d5042bd031a267f008fa2ae6.svg?invert_in_darkmode" align=middle width=190.2021pt height=49.13139pt/></p>
+<p align="center"><img src="https://rawgit.com/visipedia/inat_comp/2018/svgs/7a45c501d5042bd031a267f008fa2ae6.svg?invert_in_darkmode" align=middle width=190.2021pt height=49.13139pt/></p>
 
-The overall error score for an algorithm is the average error over all <img src="https://rawgit.com/gvanhorn38/inat_comp/2018/svgs/f9c4988898e7f532b9f826a75014ed3c.svg?invert_in_darkmode" align=middle width=14.94405pt height=22.38192pt/> test images:
-<p align="center"><img src="https://rawgit.com/gvanhorn38/inat_comp/2018/svgs/444adcac0c7cbb4a8419ee1484625349.svg?invert_in_darkmode" align=middle width=118.05123pt height=41.069655pt/></p>
+The overall error score for an algorithm is the average error over all <img src="https://rawgit.com/visipedia/inat_comp/2018/svgs/f9c4988898e7f532b9f826a75014ed3c.svg?invert_in_darkmode" align=middle width=14.94405pt height=22.38192pt/> test images:
+<p align="center"><img src="https://rawgit.com/visipedia/inat_comp/2018/svgs/444adcac0c7cbb4a8419ee1484625349.svg?invert_in_darkmode" align=middle width=118.05123pt height=41.069655pt/></p>
 
 ## Differences from iNaturalist 2017 Competition
 The 2018 competition differs from the [2017 Competition](2017/README.md) in several ways:
@@ -56,7 +56,7 @@ The 2018 competition differs from the [2017 Competition](2017/README.md) in seve
 The 2017 dataset categories contained mostly species, but also had a few additional taxonomic ranks (e.g. genus, subspecies, and variety). The 2018 categories are all species.
 
 ### Taxonomy Information & Obfuscation
-The 2018 dataset contains kingdom, phylum, class, order, family, and genus taxonomic information for all species. However, we have obfuscated all taxonomic names to hinder participants from constructing web search terms to collect additional data.
+The 2018 dataset contains kingdom, phylum, class, order, family, and genus taxonomic information for all species. However, we have obfuscated all taxonomic names (including the species name) to hinder participants from performing web searchs to collect additional data.
 
 ### Data Overlap
 The 2018 dataset contains some species and images that are found in the 2017 dataset. However, we will not provide a mapping between the two datasets.
@@ -65,7 +65,7 @@ The 2018 dataset contains some species and images that are found in the 2017 dat
 
 Participants are welcome to use the [iNaturalist 2017 Competition dataset](2017/README.md) as an additional data source. There is an overlap between the 2017 species and the 2018 species, however we do not provide a mapping between the two datasets. Besides using the 2017 dataset, participants are restricted from collecting additional natural world data for the 2018 competition. Pretrained models may be used to construct the algorithms (e.g. ImageNet pretrained models, or iNaturalist 2017 pretrained models). Please specify any and all external data used for training when uploading results.
 
-The general rule is that participants should only use the provided training and validation images to train a model to classify the test images. We do not want participants crawling the web in search of additional data for the target categories. Participants should be in the mindset that this is the only data available for these categories.
+The general rule is that participants should only use the provided training and validation images (with the exception of the allowed pretrained models) to train a model to classify the test images. We do not want participants crawling the web in search of additional data for the target categories. Participants should be in the mindset that this is the only data available for these categories.
 
 Participants are allowed to collect additional annotations (e.g. bounding boxes, keypoints) on the provided training and validation sets. Teams should specify that they collected additional annotations when submitting results.
 
@@ -131,7 +131,7 @@ id,predicted
 12345,0 78 23
 67890,83 13 42
 ```
-The `id` column corresponds to the test image id. The `predicted` column corresponds to 3 category ids, separated by spaces. You should have one row for each test image. Please sort your predictions from most confident to least, this will allow us to study top-1, top-2, and top-3 accuracy.
+The `id` column corresponds to the test image id. The `predicted` column corresponds to 3 category ids, separated by spaces. You should have one row for each test image. Please sort your predictions from most confident to least, from left to right, this will allow us to study top-1, top-2, and top-3 accuracy.
 
 ## Terms of Use
 
@@ -185,3 +185,7 @@ Download the dataset files here:
           * [Europe]()
       * Posterity [Caltech link]()
       * Running `md5sum test2018.json.tar.gz` should produce `blah`
+      
+## Pretrained Models
+
+A pretrained InceptionV3 model in PyTorch is available [here](https://github.com/macaodha/inat_comp_2018).
