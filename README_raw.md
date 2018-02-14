@@ -195,3 +195,7 @@ Download the dataset files here:
           * [Europe]()
       * Posterity [Caltech link]()
       * Running `md5sum test2018.json.tar.gz` should produce `blah`
+      
+## Pretrained Models
+
+A pretrained InceptionV3 model in PyTorch is available [here](https://github.com/macaodha/inat_comp_2018).
