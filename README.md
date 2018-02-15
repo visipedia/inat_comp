@@ -6,7 +6,7 @@ The 2018 competition is part of the [FGVC^5 workshop](https://sites.google.com/v
 Please open an issue if you have questions or problems with the dataset.
 
 ## Kaggle
-We are using Kaggle to host the leaderboard. Checkout the competition page [here]().
+We are using Kaggle to host the leaderboard. The competition page will be available soon.
 
 ## Dates
 |||
@@ -148,44 +148,44 @@ By downloading this dataset you agree to the following terms:
 Download the dataset files here:
   * All training and validation images [120GB]
       * Links for different parts of the world:
-          * [North America]()
-          * [Asia]()
-          * [Europe]()
-      * Posterity [Caltech link](). Warning this will be slow.
+          * [North America](https://storage.googleapis.com/inat_data_2018_us/train_val2018.tar.gz)
+          * [Asia](https://storage.googleapis.com/inat_data_2018_asia/train_val2018.tar.gz)
+          * [Europe](https://storage.googleapis.com/inat_data_2018_eu/train_val2018.tar.gz)
+      * Posterity [Caltech link](http://www.vision.caltech.edu/~gvanhorn/datasets/inaturalist/fgvc5_competition/train_val2018.tar.gz). Warning this will be slow.
       * Running `md5sum train_val2018.tar.gz` should produce `b1c6952ce38f31868cc50ea72d066cc3`
       * Images have a max dimension of 800px and have been converted to JPEG format
       * Untaring the images creates a directory structure like `train_val2018/super category/category/image.jpg`. This may take a while.
   * Training annotations [26MB]
       * Links for different parts of the world:
-          * [North America]()
-          * [Asia]()
-          * [Europe]()
-      * Posterity [Caltech link]()
-      * Running `md5sum train2018.json.tar.gz` should produce `blah`
+          * [North America](https://storage.googleapis.com/inat_data_2018_us/train2018.json.tar.gz)
+          * [Asia](https://storage.googleapis.com/inat_data_2018_asia/train2018.json.tar.gz)
+          * [Europe](https://storage.googleapis.com/inat_data_2018_eu/train2018.json.tar.gz)
+      * Posterity [Caltech link](http://www.vision.caltech.edu/~gvanhorn/datasets/inaturalist/fgvc5_competition/train2018.json.tar.gz)
+      * Running `md5sum train2018.json.tar.gz` should produce `bfa29d89d629cbf04d826a720c0a68b0`
   * Validation annotations [26MB]
       * Links for different parts of the world:
-          * [North America]()
-          * [Asia]()
-          * [Europe]()
-      * Posterity [Caltech link]()
-      * Running `md5sum val2018.json.tar.gz` should produce `blah`
+          * [North America](https://storage.googleapis.com/inat_data_2018_us/val2018.json.tar.gz)
+          * [Asia](https://storage.googleapis.com/inat_data_2018_asia/val2018.json.tar.gz)
+          * [Europe](https://storage.googleapis.com/inat_data_2018_eu/val2018.json.tar.gz)
+      * Posterity [Caltech link](http://www.vision.caltech.edu/~gvanhorn/datasets/inaturalist/fgvc5_competition/val2018.json.tar.gz)
+      * Running `md5sum val2018.json.tar.gz` should produce `f2ed8bfe3e9901cdefceb4e53cd3775d`
   * Test images [40GB]
       * Links for different parts of the world:
-          * [North America]()
-          * [Asia]()
-          * [Europe]()
-      * Posterity [Caltech link](). Warning this will be slow.
+          * [North America](https://storage.googleapis.com/inat_data_2018_us/test2018.tar.gz)
+          * [Asia](https://storage.googleapis.com/inat_data_2018_asia/test2018.tar.gz)
+          * [Europe](https://storage.googleapis.com/inat_data_2018_eu/test2018.tar.gz)
+      * Posterity [Caltech link](http://www.vision.caltech.edu/~gvanhorn/datasets/inaturalist/fgvc5_competition/test2018.tar.gz). Warning this will be slow.
       * Running `md5sum test2018.tar.gz` should produce `4b71d44d73e27475eefea68886c7d1b1`
       * Images have a max dimension of 800px and have been converted to JPEG format
       * Untaring the images creates a directory structure like `test2018/image.jpg`.
   * Test image info [6.3MB]
       * Links for different parts of the world:
-          * [North America]()
-          * [Asia]()
-          * [Europe]()
-      * Posterity [Caltech link]()
-      * Running `md5sum test2018.json.tar.gz` should produce `blah`
-      
+          * [North America](https://storage.googleapis.com/inat_data_2018_us/test2018.json.tar.gz)
+          * [Asia](https://storage.googleapis.com/inat_data_2018_asia/test2018.json.tar.gz)
+          * [Europe](https://storage.googleapis.com/inat_data_2018_eu/test2018.json.tar.gz)
+      * Posterity [Caltech link](http://www.vision.caltech.edu/~gvanhorn/datasets/inaturalist/fgvc5_competition/test2018.json.tar.gz)
+      * Running `md5sum test2018.json.tar.gz` should produce `fc717a7f53ac72ed8b250221a08a4502`
+
 ## Pretrained Models
 
 A pretrained InceptionV3 model in PyTorch is available [here](https://github.com/macaodha/inat_comp_2018).
