@@ -61,6 +61,9 @@ The 2018 dataset contains kingdom, phylum, class, order, family, and genus taxon
 ### Data Overlap
 The 2018 dataset contains some species and images that are found in the 2017 dataset. However, we will not provide a mapping between the two datasets.
 
+### Scoring Metric
+The 2018 competition allows for 3 guesses per test image, whereas the 2017 competition allowed 5.
+
 ## Guidelines
 
 Participants are welcome to use the [iNaturalist 2017 Competition dataset](2017/README.md) as an additional data source. There is an overlap between the 2017 species and the 2018 species, however we do not provide a mapping between the two datasets. Besides using the 2017 dataset, participants are restricted from collecting additional natural world data for the 2018 competition. Pretrained models may be used to construct the algorithms (e.g. ImageNet pretrained models, or iNaturalist 2017 pretrained models). Please specify any and all external data used for training when uploading results.
@@ -189,3 +192,7 @@ Download the dataset files here:
 ## Pretrained Models
 
 A pretrained InceptionV3 model in PyTorch is available [here](https://github.com/macaodha/inat_comp_2018).
+
+## Previous Competitions
+
+* [2017 Competition](2017/README.md)
