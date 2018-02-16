@@ -1,4 +1,4 @@
-![Banner](https://rawgit.com/visipedia/inat_comp/2018/assets/banner2018.jpg)
+![Banner](https://rawgit.com/visipedia/inat_comp/master/assets/banner2018.jpg)
 
 # iNaturalist 2018 Competition
 The 2018 competition is part of the [FGVC^5 workshop](https://sites.google.com/view/fgvc5/home) at [CVPR](http://cvpr2018.thecvf.com/).
@@ -38,7 +38,7 @@ Bacteria|1|16|3|
 |||||
 Total|8,142|437,513|24,426|
 
-![Train Val Distribution](https://rawgit.com/visipedia/inat_comp/2018/assets/train_val_distribution.png)
+![Train Val Distribution](https://rawgit.com/visipedia/inat_comp/master/assets/train_val_distribution.png)
 
 ## Evaluation
 We follow a similar metric to the classification tasks of the [ILSVRC](http://image-net.org/challenges/LSVRC/2016/index#scene). For each image $i$, an algorithm will produce 3 labels $l_{ij}$, $j=1,\ldots,3$. We allow 3 labels because some categories are disambiguated with additional data provided by the observer, such as latitude, longitude and date. For a small percentage of images, it might also be the case that multiple categories occur in an image (e.g. a photo of a bee on a flower). For this competition each image has one ground truth label $g_i$, and the error for that image is:
