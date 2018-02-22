@@ -6,7 +6,7 @@ The 2018 competition is part of the [FGVC^5 workshop](https://sites.google.com/v
 Please open an issue if you have questions or problems with the dataset.
 
 ## Kaggle
-We are using Kaggle to host the leaderboard. The competition page will be available soon.
+We are using Kaggle to host the leaderboard. Checkout the competition page [here](https://www.kaggle.com/c/inaturalist-2018).
 
 ## Dates
 |||
