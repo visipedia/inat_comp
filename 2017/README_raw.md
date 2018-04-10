@@ -128,7 +128,7 @@ The `id` column corresponds to the test image id. The `predicted` column corresp
 
 ## Bounding Boxes
 
-A *subset* of the dataset has been annotated with bounding boxes, please see the [paper](https://arxiv.org/abs/1707.06642) for the full details on how the boxes were collected. The following supercategories were annotated: 
+A *subset* of the dataset has been annotated with bounding boxes, please see the [paper](https://arxiv.org/abs/1707.06642) for the full details on how the boxes were collected. The following super categories were annotated: 
 
 | Super Category | Train Boxes |	Val Boxes |
 |------|---------------|-------------|
@@ -158,7 +158,7 @@ annotation{
 The `bbox` units are in pixels, the origin is the upper left hand corner, and the `area` value is approximated as `(width * height) / 2.0` since we did not collect segmentation masks.
 
 ### Bounding Box Caveats:
-  * Crowdworkers were asked to annotate at the *super category* level rather than the *category* level. Therefore, for images with multiple box annotations there is *no guarantee* that all instances actually belong to the same *category* even though they are labeled as being the same category (e.g. multiple bird species could be annotated in an image and labeled as the same species). Rather, the boxed instances will belong to the same *super category*. Due to this problem, the validation set is restricted to containing images with only single instances so that we can be confident that the category label is correct for the given box.    
+  * Crowdworkers were asked to annotate at the *super category* level rather than the *category* level. Therefore, for images with multiple box annotations there is *no guarantee* that all instances actually belong to the same *category* even though they are labeled as being the same category (e.g. multiple bird species could be boxed in an image and labeled as the same species). Rather, the boxed instances will belong to the same *super category*. Due to this problem, the validation set is restricted to images with single instances so that we can be confident the category label is correct for the given box.    
   * `iscrowd` is hard coded to `0` for all annotations, although it is possible that a box is around a crowd of instances (such as barnacles or mussels).
 
 ## Terms of Use
