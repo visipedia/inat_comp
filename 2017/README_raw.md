@@ -126,6 +126,41 @@ id,predicted
 ```
 The `id` column corresponds to the test image id. The `predicted` column corresponds to 5 category ids, separated by spaces. You should have one row for each test image.
 
+## Bounding Boxes
+
+A *subset* of the dataset has been annotated with bounding boxes, please see the [paper](https://arxiv.org/abs/1707.06642) for the full details on how the boxes were collected. The following supercategories were annotated: 
+
+| Super Category | Train Boxes |	Val Boxes |
+|------|---------------|-------------|
+Insecta|106,304|16,732|
+Aves|283,931|17,314|
+Reptilia|36,476|5,480|
+Mammalia|31,109|2,654|
+Amphibia|15,812|2,280|
+Mollusca|8,566|1,571|
+Animalia|6,643|1,143|
+Arachnida|4,752|1,051|
+Actinopterygii|2,571|511|
+|||||
+|Total|496,164|48,736|
+
+The bounding box format follows the COCO format:
+```
+annotation{
+  "id" : int,
+  "image_id" : int,
+  "category_id" : int,
+  "bbox" : [x, y, width, height],
+  "area" : float,
+  "iscrowd" : 0
+}
+``` 
+The `bbox` units are in pixels, the origin is the upper left hand corner, and the `area` value is approximated as `(width * height) / 2.0` since we did not collect segmentation masks.
+
+### Bounding Box Caveats:
+  * Crowdworkers were asked to annotate at the *super category* level rather than the *category* level. Therefore, for images with multiple box annotations there is *no guarantee* that all instances actually belong to the same *category* even though they are labeled as being the same category (e.g. multiple bird species could be annotated in an image and labeled as the same species). Rather, the boxed instances will belong to the same *super category*. Due to this problem, the validation set is restricted to containing images with only single instances so that we can be confident that the category label is correct for the given box.    
+  * `iscrowd` is hard coded to `0` for all annotations, although it is possible that a box is around a crowd of instances (such as barnacles or mussels).
+
 ## Terms of Use
 
 By downloading this dataset you agree to the following terms:
@@ -152,6 +187,8 @@ Download the dataset files here:
           * [North America [26MB]](https://storage.googleapis.com/us_inat_data/train_val/train_val2017.zip)
           * [Asia [26MB]](https://storage.googleapis.com/asia_inat_data/train_val/train_val2017.zip)
           * [Europe [26MB]](https://storage.googleapis.com/eu_inat_data/train_val/train_val2017.zip)
+  * [Training bounding box annotations [22MB]](http://www.vision.caltech.edu/~gvanhorn/datasets/inaturalist/fgvc4_competition/train_2017_bboxes.zip)
+  * [Validation bounding box annotations [3MB]](http://www.vision.caltech.edu/~gvanhorn/datasets/inaturalist/fgvc4_competition/val_2017_bboxes.zip)
   * Sample images
       * This is a subset of the category images that you can download for easy viewing. Contains 3 sample categories for each of the 13 super categories.
       * Links for different parts of the world:

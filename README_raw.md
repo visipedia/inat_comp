@@ -5,6 +5,9 @@ The 2018 competition is part of the [FGVC^5 workshop](https://sites.google.com/v
 
 Please open an issue if you have questions or problems with the dataset.
 
+## Updates
+April 10th, 2018: Bounding boxes have been added to the 2017 dataset, see [here](2017/README.md#bounding-boxes).
+
 ## Kaggle
 We are using Kaggle to host the leaderboard. Checkout the competition page [here](https://www.kaggle.com/c/inaturalist-2018).
 
