@@ -1,63 +1,37 @@
-![Banner](https://rawgit.com/visipedia/inat_comp/master/assets/banner2018.jpg)
+![Banner](https://rawgit.com/visipedia/inat_comp/master/assets/banner2019.gif)
 
-# iNaturalist 2018 Competition
-The 2018 competition is part of the [FGVC^5 workshop](https://sites.google.com/view/fgvc5/home) at [CVPR](http://cvpr2018.thecvf.com/).
+# iNaturalist 2019 Competition
+The 2019 competition is part of the [FGVC^6 workshop](https://sites.google.com/view/fgvc6/home) at [CVPR](http://cvpr2019.thecvf.com/).
 
 Please open an issue if you have questions or problems with the dataset.
 
 ## Updates
-June 23rd, 2018: 
+August 6th, 2019: 
   * Un-obfuscated names are released. Simply replace the `categories` list in the dataset files with the list found in this [file](http://www.vision.caltech.edu/~gvanhorn/datasets/inaturalist/fgvc5_competition/categories.json.tar.gz).
 
-  * Thanks to everyone who attended and participated in the [FGVC5 workshop](https://sites.google.com/view/fgvc5/home)! Slides from the competition overview and presentations from the top two teams can be found [here](https://www.dropbox.com/s/52nz6qc3zcwqhoa/iNaturalist_Competition_FGVC_2018.pdf?dl=0).
-
-  * A video of the validation images can be viewed [here](https://www.youtube.com/watch?v=LNq1rCUf7v4).
-
-April 10th, 2018: Bounding boxes have been added to the 2017 dataset, see [here](2017/README.md#bounding-boxes).
+  * Thanks to everyone who attended and participated in the [FGVC5 workshop](https://sites.google.com/view/fgvc6/home)! Slides from the competition overview can be found [here](https://drive.google.com/file/d/1Ah5haDF6kFioQzy45-HKTsxZCqGwondf/view).
 
 ## Kaggle
-We are using Kaggle to host the leaderboard. Checkout the competition page [here](https://www.kaggle.com/c/inaturalist-2018).
+We are using Kaggle to host the leaderboard. Checkout the competition page [here](https://www.kaggle.com/c/inaturalist-2019-fgvc6).
 
 ## Dates
 |||
 |------|---------------|
-Data Released|February, 2018|
-Submission Server Open |February, 2018|
-Submission Deadline|June, 2018|
-Winners Announced|June, 2018|
+Data Released|March, 2019|
+Submission Server Open |March, 2019|
+Submission Deadline|June, 2019|
+Winners Announced|June, 2019|
 
 ## Details
-There are a total of 8,142 species in the dataset, with 437,513 training and 24,426 validation images.
-
-| Super Category |	Category Count	| Train Images |	Val Images |
-|------|---------------|-------------|---------------|
-Plantae|2,917|118,800|8,751|
-Insecta|2,031|87,192|6,093|
-Aves|1,258|143,950|3,774|
-Actinopterygii|369|7,835|1,107|
-Fungi|321|6,864|963|
-Reptilia|284|22,754|852|
-Mollusca|262|8,007|786|
-Mammalia|234|20,104|702|
-Animalia|178|5,966|534|
-Amphibia|144|11,156|432|
-Arachnida|114|4,037|342|
-Chromista|25|621|75|
-Protozoa|4|211|12|
-Bacteria|1|16|3|
-|||||
-Total|8,142|437,513|24,426|
+There are a total of 1,010 species in the dataset, spanning 72 genera, with a combined training and validation set of 268,243 images. The dataset was constructed such that each genera contains at least 10 species, making the dataset inherently fine-grained. 
 
 ![Train Val Distribution](https://rawgit.com/visipedia/inat_comp/master/assets/train_val_distribution.png)
 
-## Video
-Click on the image below to view a video showing images from the validation set.
-[![Video](https://rawgit.com/visipedia/inat_comp/master/assets/inat2018_video.png)](https://www.youtube.com/watch?v=LNq1rCUf7v4)
 
 ## Evaluation
-We follow a similar metric to the classification tasks of the [ILSVRC](http://image-net.org/challenges/LSVRC/2016/index#scene). For each image $i$, an algorithm will produce 3 labels $l_{ij}$, $j=1,\ldots,3$. We allow 3 labels because some categories are disambiguated with additional data provided by the observer, such as latitude, longitude and date. For a small percentage of images, it might also be the case that multiple categories occur in an image (e.g. a photo of a bee on a flower). For this competition each image has one ground truth label $g_i$, and the error for that image is:
+This competition employs average top-1 error. For each image $i$, an algorithm will produce 1 label $l_i$. Each image has one ground truth label $g_i$, and the error for that image is:
 $$
-e_i = \min_{j}d(l_{ij}, g_i)
+e_i = d(l_i, g_i)
 $$
 Where
 $$
@@ -73,24 +47,16 @@ $$
 \text{score} = \frac{1}{N} \sum_{i} e_{i}
 $$
 
-## Differences from iNaturalist 2017 Competition
-The 2018 competition differs from the [2017 Competition](2017/README.md) in several ways:
+## Differences from iNaturalist 2018 Competition
+The primary difference between the 2019 competition and the [2018 Competition](2018/README.md) is the way species were selected for the dataset. For the 2019 dataset, we filtered out all species that had insufficient observations. From this reduced set, we filtered out all species that were not members of genera with at least 10 species remaining. This produced a dataset of 72 genera, each with at least 10 species, for a total of 1010 species. Our aim was to produce a collection of fine-grained problems that are representative of the natural world. We made the evalue metric more strict in 2019, going to top-1 error as opposed to top-3. 
 
-### Species Only
-The 2017 dataset categories contained mostly species, but also had a few additional taxonomic ranks (e.g. genus, subspecies, and variety). The 2018 categories are all species.
 
-### Taxonomy Information & Obfuscation
-The 2018 dataset contains kingdom, phylum, class, order, family, and genus taxonomic information for all species. However, we have obfuscated all taxonomic names (including the species name) to hinder participants from performing web searchs to collect additional data.
 
-### Data Overlap
-The 2018 dataset contains some species and images that are found in the 2017 dataset. However, we will not provide a mapping between the two datasets.
 
-### Scoring Metric
-The 2018 competition allows for 3 guesses per test image, whereas the 2017 competition allowed 5.
 
 ## Guidelines
 
-Participants are welcome to use the [iNaturalist 2017 Competition dataset](2017/README.md) as an additional data source. There is an overlap between the 2017 species and the 2018 species, however we do not provide a mapping between the two datasets. Besides using the 2017 dataset, participants are restricted from collecting additional natural world data for the 2018 competition. Pretrained models may be used to construct the algorithms (e.g. ImageNet pretrained models, or iNaturalist 2017 pretrained models). Please specify any and all external data used for training when uploading results.
+Participants are welcome to use the [iNaturalist 2018](2018/README.md) and [iNaturalist 2017](2017/README.md) competition datasets as an additional data source. There is an overlap between the 2017 + 2018 species and the 2019 species, however we do not provide a mapping. Besides using the 2017 and 2018 datasetd, participants are restricted from collecting additional natural world data for the 2019 competition. Pretrained models may be used to construct the algorithms (e.g. ImageNet pretrained models, or iNaturalist 2017 pretrained models). Please specify any and all external data used for training when uploading results.
 
 The general rule is that participants should only use the provided training and validation images (with the exception of the allowed pretrained models) to train a model to classify the test images. We do not want participants crawling the web in search of additional data for the target categories. Participants should be in the mindset that this is the only data available for these categories.
 
@@ -128,7 +94,6 @@ image{
 category{
   "id" : int,
   "name" : str,
-  "supercategory" : str,
   "kingdom" : str,
   "phylum" : str,
   "class" : str,
@@ -155,10 +120,10 @@ license{
 The submission format for the Kaggle competition is a csv file with the following format:
 ```
 id,predicted
-12345,0 78 23
-67890,83 13 42
+12345,0
+67890,83
 ```
-The `id` column corresponds to the test image id. The `predicted` column corresponds to 3 category ids, separated by spaces. You should have one row for each test image. Please sort your predictions from most confident to least, from left to right, this will allow us to study top-1, top-2, and top-3 accuracy.
+The `id` column corresponds to the test image id. The `predicted` column corresponds to the predicted category ids. You should have one row for each test image.
 
 ## Terms of Use
 
