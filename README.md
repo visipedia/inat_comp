@@ -7,7 +7,7 @@ Please open an issue if you have questions or problems with the dataset.
 
 ## Updates
 August 6th, 2019: 
-  * Un-obfuscated names are released. Simply replace the `categories` list in the dataset files with the list found in this [file](http://www.vision.caltech.edu/~gvanhorn/datasets/inaturalist/fgvc5_competition/categories.json.tar.gz).
+  * Un-obfuscated names are released. Simply replace the `categories` list in the dataset files with the list found in this [file](http://www.vision.caltech.edu/~gvanhorn/datasets/inaturalist/fgvc6_competition/categories.json.tar.gz).
 
   * Thanks to everyone who attended and participated in the [FGVC5 workshop](https://sites.google.com/view/fgvc6/home)! Slides from the competition overview can be found [here](https://drive.google.com/file/d/1Ah5haDF6kFioQzy45-HKTsxZCqGwondf/view).
 
@@ -46,7 +46,7 @@ The primary difference between the 2019 competition and the [2018 Competition](2
 
 ## Guidelines
 
-Participants are welcome to use the [iNaturalist 2018](2018/README.md) and [iNaturalist 2017](2017/README.md) competition datasets as an additional data source. There is an overlap between the 2017 + 2018 species and the 2019 species, however we do not provide a mapping. Besides using the 2017 and 2018 datasetd, participants are restricted from collecting additional natural world data for the 2019 competition. Pretrained models may be used to construct the algorithms (e.g. ImageNet pretrained models, or iNaturalist 2017 pretrained models). Please specify any and all external data used for training when uploading results.
+Participants are welcome to use the [iNaturalist 2018](2018/README.md) and [iNaturalist 2017](2017/README.md) competition datasets as an additional data source. There is an overlap between the 2017 & 2018 species and the 2019 species, however we do not provide a mapping. Besides using the 2017 and 2018 datasets, participants are restricted from collecting additional natural world data for the 2019 competition. Pretrained models may be used to construct the algorithms (e.g. ImageNet pretrained models, or iNaturalist 2017 pretrained models). Please specify any and all external data used for training when uploading results.
 
 The general rule is that participants should only use the provided training and validation images (with the exception of the allowed pretrained models) to train a model to classify the test images. We do not want participants crawling the web in search of additional data for the target categories. Participants should be in the mindset that this is the only data available for these categories.
 
@@ -127,51 +127,29 @@ By downloading this dataset you agree to the following terms:
 
 ## Data
 
-Download the dataset files here:
-  * All training and validation images [120GB]
-      * Links for different parts of the world:
-          * [North America](https://storage.googleapis.com/inat_data_2018_us/train_val2018.tar.gz)
-          * [Asia](https://storage.googleapis.com/inat_data_2018_asia/train_val2018.tar.gz)
-          * [Europe](https://storage.googleapis.com/inat_data_2018_eu/train_val2018.tar.gz)
-      * Posterity [Caltech link](http://www.vision.caltech.edu/~gvanhorn/datasets/inaturalist/fgvc5_competition/train_val2018.tar.gz). Warning this will be slow.
-      * Running `md5sum train_val2018.tar.gz` should produce `b1c6952ce38f31868cc50ea72d066cc3`
-      * Images have a max dimension of 800px and have been converted to JPEG format
-      * Untaring the images creates a directory structure like `train_val2018/super category/category/image.jpg`. This may take a while.
-  * Training annotations [26MB]
-      * Links for different parts of the world:
-          * [North America](https://storage.googleapis.com/inat_data_2018_us/train2018.json.tar.gz)
-          * [Asia](https://storage.googleapis.com/inat_data_2018_asia/train2018.json.tar.gz)
-          * [Europe](https://storage.googleapis.com/inat_data_2018_eu/train2018.json.tar.gz)
-      * Posterity [Caltech link](http://www.vision.caltech.edu/~gvanhorn/datasets/inaturalist/fgvc5_competition/train2018.json.tar.gz)
-      * Running `md5sum train2018.json.tar.gz` should produce `bfa29d89d629cbf04d826a720c0a68b0`
-  * Validation annotations [26MB]
-      * Links for different parts of the world:
-          * [North America](https://storage.googleapis.com/inat_data_2018_us/val2018.json.tar.gz)
-          * [Asia](https://storage.googleapis.com/inat_data_2018_asia/val2018.json.tar.gz)
-          * [Europe](https://storage.googleapis.com/inat_data_2018_eu/val2018.json.tar.gz)
-      * Posterity [Caltech link](http://www.vision.caltech.edu/~gvanhorn/datasets/inaturalist/fgvc5_competition/val2018.json.tar.gz)
-      * Running `md5sum val2018.json.tar.gz` should produce `f2ed8bfe3e9901cdefceb4e53cd3775d`
-  * Test images [40GB]
-      * Links for different parts of the world:
-          * [North America](https://storage.googleapis.com/inat_data_2018_us/test2018.tar.gz)
-          * [Asia](https://storage.googleapis.com/inat_data_2018_asia/test2018.tar.gz)
-          * [Europe](https://storage.googleapis.com/inat_data_2018_eu/test2018.tar.gz)
-      * Posterity [Caltech link](http://www.vision.caltech.edu/~gvanhorn/datasets/inaturalist/fgvc5_competition/test2018.tar.gz). Warning this will be slow.
-      * Running `md5sum test2018.tar.gz` should produce `4b71d44d73e27475eefea68886c7d1b1`
-      * Images have a max dimension of 800px and have been converted to JPEG format
-      * Untaring the images creates a directory structure like `test2018/image.jpg`.
-  * Test image info [6.3MB]
-      * Links for different parts of the world:
-          * [North America](https://storage.googleapis.com/inat_data_2018_us/test2018.json.tar.gz)
-          * [Asia](https://storage.googleapis.com/inat_data_2018_asia/test2018.json.tar.gz)
-          * [Europe](https://storage.googleapis.com/inat_data_2018_eu/test2018.json.tar.gz)
-      * Posterity [Caltech link](http://www.vision.caltech.edu/~gvanhorn/datasets/inaturalist/fgvc5_competition/test2018.json.tar.gz)
-      * Running `md5sum test2018.json.tar.gz` should produce `fc717a7f53ac72ed8b250221a08a4502`
+Kaggle is hosting the dataset and can be downloaded by joining the [competition](https://www.kaggle.com/c/inaturalist-2019-fgvc6) and going to the [Data page](https://www.kaggle.com/c/inaturalist-2019-fgvc6/data). We also provide posterity links via the Caltech servers. Downloading the data from Kaggle will be faster. 
 
-## Pretrained Models
-
-A pretrained InceptionV3 model in PyTorch is available [here](https://github.com/macaodha/inat_comp_2018).
+### Caltech Links:
+  * All training and validation images [74GB]
+      * [Caltech link](http://www.vision.caltech.edu/~gvanhorn/datasets/inaturalist/fgvc6_competition/train_val2019.tar.gz). Warning this will be slow.
+      * Running `md5sum train_val2019.tar.gz` should produce `c60a6e2962c9b8ccbd458d12c8582644`
+      * Images have a max dimension of 800px and have been converted to JPEG format
+      * Untaring the images creates a directory structure like `train_val2019/super category/category/image.jpg`. This may take a while.
+  * Training annotations [13MB]
+      * [Caltech link](http://www.vision.caltech.edu/~gvanhorn/datasets/inaturalist/fgvc6_competition/train2019.json.tar.gz)
+      * Running `md5sum train2019.json.tar.gz` should produce `b06a6683537867c0d5c7a45f407a306d`
+  * Validation annotations [156KB]
+      * [Caltech link](http://www.vision.caltech.edu/~gvanhorn/datasets/inaturalist/fgvc6_competition/val2019.json.tar.gz)
+      * Running `md5sum val2019.json.tar.gz` should produce `5cc5509b0fe495f1c8c1362612448497`
+  * Test images [8.6GB]
+      * [Caltech link](http://www.vision.caltech.edu/~gvanhorn/datasets/inaturalist/fgvc6_competition/test2019.tar.gz). Warning this will be slow.
+      * Running `md5sum test2019.tar.gz` should produce `6966703cc589a877689dc8993bb3e55e`
+      * Images have a max dimension of 800px and have been converted to JPEG format
+      * Untaring the images creates a directory structure like `test2019/image.jpg`.
+  * Test image info [1.3MB]
+      * [Caltech link](http://www.vision.caltech.edu/~gvanhorn/datasets/inaturalist/fgvc6_competition/test2019.json.tar.gz)
+      * Running `md5sum test2019.json.tar.gz` should produce `f3208996d9f675462cb00d2f18cbb28c`
 
 ## Previous Competitions
-
+* [2018 Competition](2018/README.md)
 * [2017 Competition](2017/README.md)
