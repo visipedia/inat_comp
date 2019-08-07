@@ -9,7 +9,7 @@ Please open an issue if you have questions or problems with the dataset.
 August 6th, 2019: 
   * Un-obfuscated names are released. Simply replace the `categories` list in the dataset files with the list found in this [file](http://www.vision.caltech.edu/~gvanhorn/datasets/inaturalist/fgvc6_competition/categories.json.tar.gz).
 
-  * Thanks to everyone who attended and participated in the [FGVC5 workshop](https://sites.google.com/view/fgvc6/home)! Slides from the competition overview can be found [here](https://drive.google.com/file/d/1Ah5haDF6kFioQzy45-HKTsxZCqGwondf/view).
+  * Thanks to everyone who attended and participated in the [FGVC6 workshop](https://sites.google.com/view/fgvc6/home)! Slides from the competition overview can be found [here](https://drive.google.com/file/d/1Ah5haDF6kFioQzy45-HKTsxZCqGwondf/view).
 
 ## Kaggle
 We are using Kaggle to host the leaderboard. Checkout the competition page [here](https://www.kaggle.com/c/inaturalist-2019-fgvc6).
@@ -48,7 +48,7 @@ $$
 $$
 
 ## Differences from iNaturalist 2018 Competition
-The primary difference between the 2019 competition and the [2018 Competition](2018/README.md) is the way species were selected for the dataset. For the 2019 dataset, we filtered out all species that had insufficient observations. From this reduced set, we filtered out all species that were not members of genera with at least 10 species remaining. This produced a dataset of 72 genera, each with at least 10 species, for a total of 1010 species. Our aim was to produce a collection of fine-grained problems that are representative of the natural world. We made the evalue metric more strict in 2019, going to top-1 error as opposed to top-3. 
+The primary difference between the 2019 competition and the [2018 Competition](2018/README.md) is the way species were selected for the dataset. For the 2019 dataset, we filtered out all species that had insufficient observations. From this reduced set, we filtered out all species that were not members of genera with at least 10 species remaining. This produced a dataset of 72 genera, each with at least 10 species, for a total of 1,010 species. Our aim was to produce a collection of fine-grained problems that are representative of the natural world. We made the evalue metric more strict in 2019, going to top-1 error as opposed to top-3. 
 
 
 
@@ -137,7 +137,7 @@ By downloading this dataset you agree to the following terms:
 
 ## Data
 
-Kaggle is hosting the dataset and can be downloaded by joining the [competition](https://www.kaggle.com/c/inaturalist-2019-fgvc6) and going to the [Data page](https://www.kaggle.com/c/inaturalist-2019-fgvc6/data). We also provide posterity links via the Caltech servers. Downloading the data from Kaggle will be faster. 
+Kaggle is hosting the dataset and can be downloaded by joining the [competition](https://www.kaggle.com/c/inaturalist-2019-fgvc6) and going to the [Data page](https://www.kaggle.com/c/inaturalist-2019-fgvc6/data). We also provide posterity links via Caltech servers. Downloading the data from Kaggle will be faster. 
 
 ### Caltech Links:
   * All training and validation images [74GB]
