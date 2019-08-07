@@ -25,7 +25,7 @@ Winners Announced|June, 2019|
 ## Details
 There are a total of 1,010 species in the dataset, spanning 72 genera, with a combined training and validation set of 268,243 images. The dataset was constructed such that each genera contains at least 10 species, making the dataset inherently fine-grained. 
 
-![Train Val Distribution](https://rawgit.com/visipedia/inat_comp/master/assets/train_val_distribution.png)
+![Train Val Distribution](https://rawgit.com/visipedia/inat_comp/master/assets/train_val_distribution2019.png)
 
 
 ## Evaluation
