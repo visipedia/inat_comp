@@ -6,6 +6,9 @@ The 2018 competition is part of the [FGVC^5 workshop](https://sites.google.com/v
 Please open an issue if you have questions or problems with the dataset.
 
 ## Updates
+August 16th, 2019: 
+  * Additional metadata in the form of latitude, longitude, date, and user_id for each of images in the train and validation sets can be found [here](http://www.vision.caltech.edu/~gvanhorn/datasets/inaturalist/fgvc5_competition/inat2018_locations.zip).
+
 June 23rd, 2018: 
   * Un-obfuscated names are released. Simply replace the `categories` list in the dataset files with the list found in this [file](http://www.vision.caltech.edu/~gvanhorn/datasets/inaturalist/fgvc5_competition/categories.json.tar.gz).
 
@@ -196,6 +199,9 @@ Download the dataset files here:
           * [Europe](https://storage.googleapis.com/inat_data_2018_eu/val2018.json.tar.gz)
       * Posterity [Caltech link](http://www.vision.caltech.edu/~gvanhorn/datasets/inaturalist/fgvc5_competition/val2018.json.tar.gz)
       * Running `md5sum val2018.json.tar.gz` should produce `f2ed8bfe3e9901cdefceb4e53cd3775d`
+  * Location annotations (train and val) [11MB]
+      * Posterity [Caltech link](http://www.vision.caltech.edu/~gvanhorn/datasets/inaturalist/fgvc5_competition/inat2018_locations.zip)
+      * Running `md5sum inat2018_locations.zip` should produce `1704763abc47b75820aa5a3d93c6c0f3`
   * Test images [40GB]
       * Links for different parts of the world:
           * [North America](https://storage.googleapis.com/inat_data_2018_us/test2018.tar.gz)

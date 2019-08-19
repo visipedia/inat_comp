@@ -6,6 +6,10 @@ Please open an issue if you have questions or problems with the dataset.
 # 2017 Competition
 The 2017 competition, sponsored by Google, is part of the [FGVC^4 workshop](http://fgvc.org) at [CVPR](http://cvpr2017.thecvf.com/).
 
+## Updates
+August 16th, 2019: 
+  * Additional metadata in the form of latitude, longitude, date, and user_id for each of images in the train and validation sets can be found [here](http://www.vision.caltech.edu/~gvanhorn/datasets/inaturalist/fgvc4_competition/inat2017_locations.zip).
+
 ## Kaggle
 We are using Kaggle to host the leaderboard. Checkout the competition page [here](https://www.kaggle.com/c/inaturalist-challenge-at-fgvc-2017).
 
@@ -195,6 +199,8 @@ Download the dataset files here:
           * [North America [1.2GB]](https://storage.googleapis.com/us_inat_data/train_val/train_val_images_mini.tar.gz)
           * [Asia [1.2GB]](https://storage.googleapis.com/asia_inat_data/train_val/train_val_images_mini.tar.gz)
           * [Europe [1.2GB]](https://storage.googleapis.com/eu_inat_data/train_val/train_val_images_mini.tar.gz)
+  * [Location annotations (train and val) [12MB]](http://www.vision.caltech.edu/~gvanhorn/datasets/inaturalist/fgvc4_competition/inat2017_locations.zip)
+      * Running `md5sum inat2017_locations.zip` should produce `afc1956f9a100b165b89f3923d040912`
   * [Test images [53GB]](http://www.vision.caltech.edu/~gvanhorn/datasets/inaturalist/fgvc4_competition/test2017.tar.gz)
       * Alternative links for different parts of the world:
           * [North America [53GB]](https://storage.googleapis.com/us_inat_data/test/test2017_images.tar.gz)
