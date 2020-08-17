@@ -19,7 +19,8 @@ June 23rd, 2018:
 
   * A video of the validation images can be viewed [here](https://www.youtube.com/watch?v=LNq1rCUf7v4).
 
-April 10th, 2018: Bounding boxes have been added to the 2017 dataset, see [here](2017/README.md#bounding-boxes).
+April 10th, 2018: 
+  * Bounding boxes have been added to the 2017 dataset, see [here](https://github.com/visipedia/inat_comp/tree/master/2017#bounding-boxes).
 
 ## Kaggle
 We are using Kaggle to host the leaderboard. Checkout the competition page [here](https://www.kaggle.com/c/inaturalist-2018).
