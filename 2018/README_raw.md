@@ -6,6 +6,9 @@ The 2018 competition is part of the [FGVC^5 workshop](https://sites.google.com/v
 Please open an issue if you have questions or problems with the dataset.
 
 ## Updates
+August 17th, 2020:
+  * AWS S3 download links were created due to problems with the original Google and Caltech links. The dataset files are in a "requester pays" bucket, so you will need to download them through an AWS API. See the [Data](#Data) section below. 
+
 August 16th, 2019: 
   * Additional metadata in the form of latitude, longitude, date, and user_id for each of images in the train and validation sets can be found [here](http://www.vision.caltech.edu/~gvanhorn/datasets/inaturalist/fgvc5_competition/inat2018_locations.zip).
 
@@ -174,6 +177,37 @@ By downloading this dataset you agree to the following terms:
 5. You accept full responsibility for your use of the data and shall defend and indemnify the California Institute of Technology, including its employees, officers and agents, against any and all claims arising from your use of the data, including but not limited to your use of any copies of copyrighted images that you may create from the data.
 
 ## Data
+
+Due to some issues with the original Google and Caltech links, we have made the dataset available via a "[requester pays](https://docs.aws.amazon.com/AmazonS3/latest/dev/RequesterPaysBuckets.html)" bucket on AWS S3. To download the dataset files from S3 you must use an AWS API tool so that AWS knows who to charge for the data egress fees. Once you have an AWS account set up, the [s3cmd](https://s3tools.org/s3cmd) tool makes downloading the dataset very easy. 
+
+AWS S3 Bucket Paths:
+  * All training and validation images [120GB]
+    * s3://inaturalist-datasets/2018/train_val2018.tar.gz
+  * Training annotations [26MB]
+    * s3://inaturalist-datasets/2018/train2018.json.tar.gz
+  * Validation annotations [26MB]
+    * s3://inaturalist-datasets/2018/val2018.json.tar.gz
+  * Un-obfuscated category names [2MB]
+    * s3://inaturalist-datasets/2018/categories.json.tar.gz
+  * Location annotations (train and val) [11MB]
+    * s3://inaturalist-datasets/2018/inat2018_locations.zip
+  * Test images [40GB]
+    * s3://inaturalist-datasets/2018/test2018.tar.gz
+  * Test image info [6.3MB]
+    * s3://inaturalist-datasets/2018/test2018.json.tar.gz
+
+Example s3cmd usage for downloading the training and validation images:
+```
+pip install s3cmd
+
+s3cmd \
+--access_key XXXXXXXXXXXXXXXXXXXX \
+--secret_key XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX \
+--requester-pays \
+get s3://inaturalist-datasets/2018/train_val2018.tar.gz .
+```
+
+### **The following links are currently broken but the information is still relevant.**
 
 Download the dataset files here:
   * All training and validation images [120GB]

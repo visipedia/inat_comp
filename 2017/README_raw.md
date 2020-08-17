@@ -7,6 +7,9 @@ Please open an issue if you have questions or problems with the dataset.
 The 2017 competition, sponsored by Google, is part of the [FGVC^4 workshop](http://fgvc.org) at [CVPR](http://cvpr2017.thecvf.com/).
 
 ## Updates
+August 17th, 2020:
+  * AWS S3 download links were created due to problems with the original Google and Caltech links. The dataset files are in a "requester pays" bucket, so you will need to download them through an AWS API. See the [Data](#Data) section below. 
+
 August 16th, 2019: 
   * Additional metadata in the form of latitude, longitude, date, and user_id for each of images in the train and validation sets can be found [here](http://www.vision.caltech.edu/~gvanhorn/datasets/inaturalist/fgvc4_competition/inat2017_locations.zip).
 
@@ -176,6 +179,37 @@ By downloading this dataset you agree to the following terms:
 5. You accept full responsibility for your use of the data and shall defend and indemnify the California Institute of Technology, including its employees, officers and agents, against any and all claims arising from your use of the data, including but not limited to your use of any copies of copyrighted images that you may create from the data.
 
 ## Data
+
+Due to some issues with the original Google and Caltech links, we have made the dataset available via a "[requester pays](https://docs.aws.amazon.com/AmazonS3/latest/dev/RequesterPaysBuckets.html)" bucket on AWS S3. To download the dataset files from S3 you must use an AWS API tool so that AWS knows who to charge for the data egress fees. Once you have an AWS account set up, the [s3cmd](https://s3tools.org/s3cmd) tool makes downloading the dataset very easy. 
+
+AWS S3 Bucket Paths:
+  * Training and validation images [186GB]
+    * s3://inaturalist-datasets/2017/train_val_images.tar.gz
+  * Training and validation annotations [26MB]
+    * s3://inaturalist-datasets/2017/train_val2017.zip
+  * Training bounding box annotations [22MB]
+    * s3://inaturalist-datasets/2017/train_2017_bboxes.zip
+  * Validation bounding box annotations [3MB]
+    * s3://inaturalist-datasets/2017/val_2017_bboxes.zip
+  * Location annotations (train and val) [12MB]
+    * s3://inaturalist-datasets/2017/inat2017_locations.zip
+  * Test images [53GB]
+    * s3://inaturalist-datasets/2017/test2017.tar.gz
+  * Test image info [6.3MB]
+    * s3://inaturalist-datasets/2017/test2017.zip
+
+Example s3cmd usage for downloading the training and validation images:
+```
+pip install s3cmd
+
+s3cmd \
+--access_key XXXXXXXXXXXXXXXXXXXX \
+--secret_key XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX \
+--requester-pays \
+get s3://inaturalist-datasets/2017/train_val_images.tar.gz .
+```
+
+### **The following links are currently broken but the information is still relevant.**
 
 Download the dataset files here:
   * [Training and validation images [186GB]](http://www.vision.caltech.edu/~gvanhorn/datasets/inaturalist/fgvc4_competition/train_val_images.tar.gz)
