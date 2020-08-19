@@ -6,6 +6,9 @@ The 2019 competition is part of the [FGVC^6 workshop](https://sites.google.com/v
 Please open an issue if you have questions or problems with the dataset.
 
 ## Updates
+August 19th, 2020:
+  * AWS S3 download links were created due to problems with the original Caltech links. The dataset files are in a "requester pays" bucket, so you will need to download them through an AWS API. See the [Data](#Data) section below. 
+
 August 6th, 2019: 
   * Un-obfuscated names are released. Simply replace the `categories` list in the dataset files with the list found in this [file](http://www.vision.caltech.edu/~gvanhorn/datasets/inaturalist/fgvc6_competition/categories.json.tar.gz).
 
@@ -138,6 +141,35 @@ By downloading this dataset you agree to the following terms:
 ## Data
 
 Kaggle is hosting the dataset and can be downloaded by joining the [competition](https://www.kaggle.com/c/inaturalist-2019-fgvc6) and going to the [Data page](https://www.kaggle.com/c/inaturalist-2019-fgvc6/data). We also provide posterity links via Caltech servers. Downloading the data from Kaggle will be faster. 
+
+Due to some issues with the original Caltech links, we have made the dataset available via a "[requester pays](https://docs.aws.amazon.com/AmazonS3/latest/dev/RequesterPaysBuckets.html)" bucket on AWS S3. To download the dataset files from S3 you must use an AWS API tool so that AWS knows who to charge for the data egress fees. Once you have an AWS account set up, the [s3cmd](https://s3tools.org/s3cmd) tool makes downloading the dataset very easy. 
+
+AWS S3 Bucket Paths:
+  * All training and validation images [74GB]
+    * s3://inaturalist-datasets/2019/train_val2019.tar.gz
+  * Training annotations [13MB]
+    * s3://inaturalist-datasets/2019/train2019.json.tar.gz
+  * Validation annotations [156KB]
+    * s3://inaturalist-datasets/2019/val2019.json.tar.gz
+  * Un-obfuscated category names [13KB]
+    * s3://inaturalist-datasets/2019/categories.json.tar.gz
+  * Test images [8.6GB]
+    * s3://inaturalist-datasets/2019/test2019.tar.gz
+  * Test image info [1.3MB]
+    * s3://inaturalist-datasets/2019/test2019.json.tar.gz
+
+Example s3cmd usage for downloading the training and validation images:
+```
+pip install s3cmd
+
+s3cmd \
+--access_key XXXXXXXXXXXXXXXXXXXX \
+--secret_key XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX \
+--requester-pays \
+get s3://inaturalist-datasets/2019/train_val2019.tar.gz .
+```
+
+### **The following links are currently broken but the information is still relevant.**
 
 ### Caltech Links:
   * All training and validation images [74GB]

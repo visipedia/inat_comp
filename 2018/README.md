@@ -250,4 +250,4 @@ A pretrained InceptionV3 model in PyTorch is available [here](https://github.com
 
 ## Previous Competitions
 
-* [2017 Competition](2017/README.md)
+* [2017 Competition](https://github.com/visipedia/inat_comp/tree/master/2017)
