@@ -1,4 +1,4 @@
-![Banner](https://rawgit.com/visipedia/inat_comp/master/2018/assets/banner2018.jpg)
+![Banner](assets/banner2018.jpg)
 
 # iNaturalist 2018 Competition
 The 2018 competition is part of the [FGVC^5 workshop](https://sites.google.com/view/fgvc5/home) at [CVPR](http://cvpr2018.thecvf.com/).
@@ -20,7 +20,7 @@ June 23rd, 2018:
   * A video of the validation images can be viewed [here](https://www.youtube.com/watch?v=LNq1rCUf7v4).
 
 April 10th, 2018: 
-  * Bounding boxes have been added to the 2017 dataset, see [here](https://github.com/visipedia/inat_comp/tree/master/2017#bounding-boxes).
+  * Bounding boxes have been added to the 2017 dataset, see [here](../2017#bounding-boxes).
 
 ## Kaggle
 We are using Kaggle to host the leaderboard. Checkout the competition page [here](https://www.kaggle.com/c/inaturalist-2018).
@@ -55,11 +55,11 @@ Bacteria|1|16|3|
 |||||
 Total|8,142|437,513|24,426|
 
-![Train Val Distribution](https://rawgit.com/visipedia/inat_comp/master/2018/assets/train_val_distribution.png)
+![Train Val Distribution](assets/train_val_distribution.png)
 
 ## Video
 Click on the image below to view a video showing images from the validation set.
-[![Video](https://rawgit.com/visipedia/inat_comp/master/2018/assets/inat2018_video.png)](https://www.youtube.com/watch?v=LNq1rCUf7v4)
+[![Video](assets/inat2018_video.png)](https://www.youtube.com/watch?v=LNq1rCUf7v4)
 
 ## Evaluation
 We follow a similar metric to the classification tasks of the [ILSVRC](http://image-net.org/challenges/LSVRC/2016/index#scene). For each image <img src="https://rawgit.com/visipedia/inat_comp/master/2018/svgs/77a3b857d53fb44e33b53e4c8b68351a.svg?invert_in_darkmode" align=middle width=5.642109000000004pt height=21.602129999999985pt/>, an algorithm will produce 3 labels <img src="https://rawgit.com/visipedia/inat_comp/master/2018/svgs/655bedbaf4a65f397b5041d0fdecde4c.svg?invert_in_darkmode" align=middle width=15.601905000000002pt height=22.745910000000016pt/>, <img src="https://rawgit.com/visipedia/inat_comp/master/2018/svgs/946e592e2b2753a9272767ae3dd5b9a9.svg?invert_in_darkmode" align=middle width=82.4274pt height=21.602129999999985pt/>. We allow 3 labels because some categories are disambiguated with additional data provided by the observer, such as latitude, longitude and date. For a small percentage of images, it might also be the case that multiple categories occur in an image (e.g. a photo of a bee on a flower). For this competition each image has one ground truth label <img src="https://rawgit.com/visipedia/inat_comp/master/2018/svgs/681a37b53b66acbc455e39ca3e6f1c41.svg?invert_in_darkmode" align=middle width=12.444795000000004pt height=14.102549999999994pt/>, and the error for that image is:
@@ -71,7 +71,7 @@ The overall error score for an algorithm is the average error over all <img src=
 <p align="center"><img src="https://rawgit.com/visipedia/inat_comp/master/2018/svgs/444adcac0c7cbb4a8419ee1484625349.svg?invert_in_darkmode" align=middle width=118.05122999999999pt height=41.069655pt/></p>
 
 ## Differences from iNaturalist 2017 Competition
-The 2018 competition differs from the [2017 Competition](2017/README.md) in several ways:
+The 2018 competition differs from the [2017 Competition](../2017/README.md) in several ways:
 
 ### Species Only
 The 2017 dataset categories contained mostly species, but also had a few additional taxonomic ranks (e.g. genus, subspecies, and variety). The 2018 categories are all species.
@@ -87,7 +87,7 @@ The 2018 competition allows for 3 guesses per test image, whereas the 2017 compe
 
 ## Guidelines
 
-Participants are welcome to use the [iNaturalist 2017 Competition dataset](2017/README.md) as an additional data source. There is an overlap between the 2017 species and the 2018 species, however we do not provide a mapping between the two datasets. Besides using the 2017 dataset, participants are restricted from collecting additional natural world data for the 2018 competition. Pretrained models may be used to construct the algorithms (e.g. ImageNet pretrained models, or iNaturalist 2017 pretrained models). Please specify any and all external data used for training when uploading results.
+Participants are welcome to use the [iNaturalist 2017 Competition dataset](../2017/README.md) as an additional data source. There is an overlap between the 2017 species and the 2018 species, however we do not provide a mapping between the two datasets. Besides using the 2017 dataset, participants are restricted from collecting additional natural world data for the 2018 competition. Pretrained models may be used to construct the algorithms (e.g. ImageNet pretrained models, or iNaturalist 2017 pretrained models). Please specify any and all external data used for training when uploading results.
 
 The general rule is that participants should only use the provided training and validation images (with the exception of the allowed pretrained models) to train a model to classify the test images. We do not want participants crawling the web in search of additional data for the target categories. Participants should be in the mindset that this is the only data available for these categories.
 
@@ -250,4 +250,4 @@ A pretrained InceptionV3 model in PyTorch is available [here](https://github.com
 
 ## Previous Competitions
 
-* [2017 Competition](https://github.com/visipedia/inat_comp/tree/master/2017)
+* [2017 Competition](../2017)
