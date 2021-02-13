@@ -28,17 +28,17 @@ Winners Announced|June, 2019|
 ## Details
 There are a total of 1,010 species in the dataset, spanning 72 genera, with a combined training and validation set of 268,243 images. The dataset was constructed such that each genera contains at least 10 species, making the dataset inherently fine-grained. 
 
-![Train Val Distribution](https://rawgit.com/visipedia/inat_comp/master/2019/assets/train_val_distribution2019.png)
+![Train Val Distribution](assets/train_val_distribution2019.png)
 
 
 ## Evaluation
-This competition employs average top-1 error. For each image <img src="https://rawgit.com/visipedia/inat_comp/2021/2019/svgs/77a3b857d53fb44e33b53e4c8b68351a.svg?invert_in_darkmode" align=middle width=5.642109000000004pt height=21.602129999999985pt/>, an algorithm will produce 1 label <img src="https://rawgit.com/visipedia/inat_comp/2021/2019/svgs/bb29cf3d0decad4c2df62b08fbcb2d23.svg?invert_in_darkmode" align=middle width=9.520170000000002pt height=22.745910000000016pt/>. Each image has one ground truth label <img src="https://rawgit.com/visipedia/inat_comp/2021/2019/svgs/681a37b53b66acbc455e39ca3e6f1c41.svg?invert_in_darkmode" align=middle width=12.444795000000004pt height=14.102549999999994pt/>, and the error for that image is:
-<p align="center"><img src="https://rawgit.com/visipedia/inat_comp/2021/2019/svgs/d04cfdb4d46bd80e8835a37572804c82.svg?invert_in_darkmode" align=middle width=87.16207499999999pt height=16.376943pt/></p>
+This competition employs average top-1 error. For each image <img src="https://rawgit.com/visipedia/inat_comp/master/2019/svgs/77a3b857d53fb44e33b53e4c8b68351a.svg?invert_in_darkmode" align=middle width=5.642109000000004pt height=21.602129999999985pt/>, an algorithm will produce 1 label <img src="https://rawgit.com/visipedia/inat_comp/master/2019/svgs/bb29cf3d0decad4c2df62b08fbcb2d23.svg?invert_in_darkmode" align=middle width=9.520170000000002pt height=22.745910000000016pt/>. Each image has one ground truth label <img src="https://rawgit.com/visipedia/inat_comp/master/2019/svgs/681a37b53b66acbc455e39ca3e6f1c41.svg?invert_in_darkmode" align=middle width=12.444795000000004pt height=14.102549999999994pt/>, and the error for that image is:
+<p align="center"><img src="https://rawgit.com/visipedia/inat_comp/master/2019/svgs/d04cfdb4d46bd80e8835a37572804c82.svg?invert_in_darkmode" align=middle width=87.16207499999999pt height=16.376943pt/></p>
 Where
-<p align="center"><img src="https://rawgit.com/visipedia/inat_comp/2021/2019/svgs/7a45c501d5042bd031a267f008fa2ae6.svg?invert_in_darkmode" align=middle width=190.2021pt height=49.131389999999996pt/></p>
+<p align="center"><img src="https://rawgit.com/visipedia/inat_comp/master/2019/svgs/7a45c501d5042bd031a267f008fa2ae6.svg?invert_in_darkmode" align=middle width=190.2021pt height=49.131389999999996pt/></p>
 
-The overall error score for an algorithm is the average error over all <img src="https://rawgit.com/visipedia/inat_comp/2021/2019/svgs/f9c4988898e7f532b9f826a75014ed3c.svg?invert_in_darkmode" align=middle width=14.944050000000002pt height=22.381919999999983pt/> test images:
-<p align="center"><img src="https://rawgit.com/visipedia/inat_comp/2021/2019/svgs/444adcac0c7cbb4a8419ee1484625349.svg?invert_in_darkmode" align=middle width=118.05122999999999pt height=41.069655pt/></p>
+The overall error score for an algorithm is the average error over all <img src="https://rawgit.com/visipedia/inat_comp/master/2019/svgs/f9c4988898e7f532b9f826a75014ed3c.svg?invert_in_darkmode" align=middle width=14.944050000000002pt height=22.381919999999983pt/> test images:
+<p align="center"><img src="https://rawgit.com/visipedia/inat_comp/master/2019/svgs/444adcac0c7cbb4a8419ee1484625349.svg?invert_in_darkmode" align=middle width=118.05122999999999pt height=41.069655pt/></p>
 
 ## Differences from iNaturalist 2018 Competition
 The primary difference between the 2019 competition and the [2018 Competition](../2018/README.md) is the way species were selected for the dataset. For the 2019 dataset, we filtered out all species that had insufficient observations. From this reduced set, we filtered out all species that were not members of genera with at least 10 species remaining. This produced a dataset of 72 genera, each with at least 10 species, for a total of 1,010 species. Our aim was to produce a collection of fine-grained problems that are representative of the natural world. We made the evalue metric more strict in 2019, going to top-1 error as opposed to top-3. 
