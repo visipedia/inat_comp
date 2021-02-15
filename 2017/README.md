@@ -1,4 +1,4 @@
-![Banner](assets/banner.jpg)
+![Banner](assets/inat_2017_banner.jpg)
 
 # iNaturalist Competition
 Please open an issue if you have questions or problems with the dataset.
@@ -7,6 +7,9 @@ Please open an issue if you have questions or problems with the dataset.
 The 2017 competition, sponsored by Google, is part of the [FGVC^4 workshop](http://fgvc.org) at [CVPR](http://cvpr2017.thecvf.com/).
 
 ## Updates
+February 15th, 2021:
+  * AWS Open Data download links now freely available. See the [Data](#Data) section below.
+
 August 17th, 2020:
   * AWS S3 download links were created due to problems with the original Google and Caltech links. The dataset files are in a "requester pays" bucket, so you will need to download them through an AWS API. See the [Data](#Data) section below. 
 
@@ -170,70 +173,35 @@ By downloading this dataset you agree to the following terms:
 
 ## Data
 
-Due to some issues with the original Google and Caltech links, we have made the dataset available via a "[requester pays](https://docs.aws.amazon.com/AmazonS3/latest/dev/RequesterPaysBuckets.html)" bucket on AWS S3. To download the dataset files from S3 you must use an AWS API tool so that AWS knows who to charge for the data egress fees. Once you have an AWS account set up, the [s3cmd](https://s3tools.org/s3cmd) tool makes downloading the dataset very easy. 
+The dataset is freely available through the AWS Open Data Program. Download the dataset files here:
+  * [Training and validation images [186GB]](https://ml-inat-competition-datasets.s3.amazonaws.com/2017/train_val_images.tar.gz)
+      * s3://ml-inat-competition-datasets/2017/train_val_images.tar.gz
+      * Running `md5sum` on the tar.gz file should produce `7c784ea5e424efaec655bd392f87301f  train_val_images.tar.gz`
+      * Images have a max dimension of 800px and have been converted to JPEG format
+      * Untaring the images creates a directory structure like `train_val_images/super category/category/image.jpg`. This may take a while.
+  * [Training and validation annotations [26MB]](https://ml-inat-competition-datasets.s3.amazonaws.com/2017/train_val2017.zip)
+      * s3://ml-inat-competition-datasets/2017/train_val2017.zip
+  * [Training bounding box annotations [22MB]](https://ml-inat-competition-datasets.s3.amazonaws.com/2017/train_2017_bboxes.zip)
+      * s3://ml-inat-competition-datasets/2017/train_2017_bboxes.zip
+  * [Validation bounding box annotations [3MB]](https://ml-inat-competition-datasets.s3.amazonaws.com/2017/val_2017_bboxes.zip)
+      * s3://ml-inat-competition-datasets/2017/val_2017_bboxes.zip
+  * [Location annotations (train and val) [12MB]](https://ml-inat-competition-datasets.s3.amazonaws.com/2017/inat2017_locations.zip)
+      * s3://ml-inat-competition-datasets/2017/inat2017_locations.zip
+      * Running `md5sum inat2017_locations.zip` should produce `afc1956f9a100b165b89f3923d040912`
+  * [Test images [53GB]](https://ml-inat-competition-datasets.s3.amazonaws.com/2017/test2017.tar.gz)
+      * s3://ml-inat-competition-datasets/2017/test2017.tar.gz
+      * Running `md5sum` on the tar.gz file should produce `7d9b096fa1cd94d67a0fa779ea301234  test2017.tar.gz`
+      * Images have a max dimension of 800px and have been converted to JPEG format
+  * [Test image info [6.3MB]](https://ml-inat-competition-datasets.s3.amazonaws.com/2017/test2017.zip)
+      * s3://ml-inat-competition-datasets/2017/test2017.zip
 
-AWS S3 Bucket Paths:
-  * Training and validation images [186GB]
-    * s3://inaturalist-datasets/2017/train_val_images.tar.gz
-  * Training and validation annotations [26MB]
-    * s3://inaturalist-datasets/2017/train_val2017.zip
-  * Training bounding box annotations [22MB]
-    * s3://inaturalist-datasets/2017/train_2017_bboxes.zip
-  * Validation bounding box annotations [3MB]
-    * s3://inaturalist-datasets/2017/val_2017_bboxes.zip
-  * Location annotations (train and val) [12MB]
-    * s3://inaturalist-datasets/2017/inat2017_locations.zip
-  * Test images [53GB]
-    * s3://inaturalist-datasets/2017/test2017.tar.gz
-  * Test image info [6.3MB]
-    * s3://inaturalist-datasets/2017/test2017.zip
 
-Example s3cmd usage for downloading the training and validation images:
+Example [s3cmd](https://s3tools.org/s3cmd) usage for downloading the training and validation images:
 ```
 pip install s3cmd
 
 s3cmd \
 --access_key XXXXXXXXXXXXXXXXXXXX \
 --secret_key XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX \
---requester-pays \
-get s3://inaturalist-datasets/2017/train_val_images.tar.gz .
+get s3://ml-inat-competition-datasets/2017/train_val_images.tar.gz .
 ```
-
-### **The following links are currently broken but the information is still relevant.**
-
-Download the dataset files here:
-  * [Training and validation images [186GB]](http://www.vision.caltech.edu/~gvanhorn/datasets/inaturalist/fgvc4_competition/train_val_images.tar.gz)
-      * Alternate links for different parts of the world:
-          * [North America [186GB]](https://storage.googleapis.com/us_inat_data/train_val/train_val_images.tar.gz)
-          * [Asia [186GB]](https://storage.googleapis.com/asia_inat_data/train_val/train_val_images.tar.gz)
-          * [Europe [186GB]](https://storage.googleapis.com/eu_inat_data/train_val/train_val_images.tar.gz)
-      * Running `md5sum` on the tar.gz file should produce `7c784ea5e424efaec655bd392f87301f  train_val_images.tar.gz`
-      * Images have a max dimension of 800px and have been converted to JPEG format
-      * Untaring the images creates a directory structure like `train_val_images/super category/category/image.jpg`. This may take a while.
-  * [Training and validation annotations [26MB]](http://www.vision.caltech.edu/~gvanhorn/datasets/inaturalist/fgvc4_competition/train_val2017.zip)
-      * Alternate links for different parts of the world:
-          * [North America [26MB]](https://storage.googleapis.com/us_inat_data/train_val/train_val2017.zip)
-          * [Asia [26MB]](https://storage.googleapis.com/asia_inat_data/train_val/train_val2017.zip)
-          * [Europe [26MB]](https://storage.googleapis.com/eu_inat_data/train_val/train_val2017.zip)
-  * [Training bounding box annotations [22MB]](http://www.vision.caltech.edu/~gvanhorn/datasets/inaturalist/fgvc4_competition/train_2017_bboxes.zip)
-  * [Validation bounding box annotations [3MB]](http://www.vision.caltech.edu/~gvanhorn/datasets/inaturalist/fgvc4_competition/val_2017_bboxes.zip)
-  * Sample images
-      * This is a subset of the category images that you can download for easy viewing. Contains 3 sample categories for each of the 13 super categories.
-      * Links for different parts of the world:
-          * [North America [1.2GB]](https://storage.googleapis.com/us_inat_data/train_val/train_val_images_mini.tar.gz)
-          * [Asia [1.2GB]](https://storage.googleapis.com/asia_inat_data/train_val/train_val_images_mini.tar.gz)
-          * [Europe [1.2GB]](https://storage.googleapis.com/eu_inat_data/train_val/train_val_images_mini.tar.gz)
-  * [Location annotations (train and val) [12MB]](http://www.vision.caltech.edu/~gvanhorn/datasets/inaturalist/fgvc4_competition/inat2017_locations.zip)
-      * Running `md5sum inat2017_locations.zip` should produce `afc1956f9a100b165b89f3923d040912`
-  * [Test images [53GB]](http://www.vision.caltech.edu/~gvanhorn/datasets/inaturalist/fgvc4_competition/test2017.tar.gz)
-      * Alternative links for different parts of the world:
-          * [North America [53GB]](https://storage.googleapis.com/us_inat_data/test/test2017_images.tar.gz)
-          * [Asia [53GB]](https://storage.googleapis.com/asia_inat_data/test/test2017_images.tar.gz)
-          * [Europe [53GB]](https://storage.googleapis.com/eu_inat_data/test/test2017_images.tar.gz)
-      * Running `md5sum` on the tar.gz file should produce `7d9b096fa1cd94d67a0fa779ea301234  test2017.tar.gz`
-      * Images have a max dimension of 800px and have been converted to JPEG format
-  * [Test image info [6.3MB]](http://www.vision.caltech.edu/~gvanhorn/datasets/inaturalist/fgvc4_competition/test2017.zip)
-      * Alternative links for different parts of the world:
-          * [North America [6.3MB]](https://storage.googleapis.com/us_inat_data/test/test2017.zip)
-          * [Asia [6.3MB]](https://storage.googleapis.com/asia_inat_data/test/test2017.zip)
-          * [Europe [6.3MB]](https://storage.googleapis.com/eu_inat_data/test/test2017.zip)

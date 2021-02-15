@@ -1,4 +1,4 @@
-![Banner](assets/banner2018.jpg)
+![Banner](assets/inat_2018_banner.jpg)
 
 # iNaturalist 2018 Competition
 The 2018 competition is part of the [FGVC^5 workshop](https://sites.google.com/view/fgvc5/home) at [CVPR](http://cvpr2018.thecvf.com/).
@@ -6,6 +6,9 @@ The 2018 competition is part of the [FGVC^5 workshop](https://sites.google.com/v
 Please open an issue if you have questions or problems with the dataset.
 
 ## Updates
+February 15th, 2021:
+  * AWS Open Data download links now freely available. See the [Data](#Data) section below.
+
 August 17th, 2020:
   * AWS S3 download links were created due to problems with the original Google and Caltech links. The dataset files are in a "requester pays" bucket, so you will need to download them through an AWS API. See the [Data](#Data) section below. 
 
@@ -13,7 +16,7 @@ August 16th, 2019:
   * Additional metadata in the form of latitude, longitude, date, and user_id for each of images in the train and validation sets can be found [here](http://www.vision.caltech.edu/~gvanhorn/datasets/inaturalist/fgvc5_competition/inat2018_locations.zip).
 
 June 23rd, 2018: 
-  * Un-obfuscated names are released. Simply replace the `categories` list in the dataset files with the list found in this [file](http://www.vision.caltech.edu/~gvanhorn/datasets/inaturalist/fgvc5_competition/categories.json.tar.gz).
+  * Un-obfuscated names are released. Simply replace the `categories` list in the dataset files with the list found in this [file](https://ml-inat-competition-datasets.s3.amazonaws.com/2018/categories.json.tar.gz).
 
   * Thanks to everyone who attended and participated in the [FGVC5 workshop](https://sites.google.com/view/fgvc5/home)! Slides from the competition overview and presentations from the top two teams can be found [here](https://www.dropbox.com/s/52nz6qc3zcwqhoa/iNaturalist_Competition_FGVC_2018.pdf?dl=0).
 
@@ -169,80 +172,41 @@ By downloading this dataset you agree to the following terms:
 
 ## Data
 
-Due to some issues with the original Google and Caltech links, we have made the dataset available via a "[requester pays](https://docs.aws.amazon.com/AmazonS3/latest/dev/RequesterPaysBuckets.html)" bucket on AWS S3. To download the dataset files from S3 you must use an AWS API tool so that AWS knows who to charge for the data egress fees. Once you have an AWS account set up, the [s3cmd](https://s3tools.org/s3cmd) tool makes downloading the dataset very easy. 
+The dataset is freely available through the AWS Open Data Program. Download the dataset files here:
+  * [All training and validation images [120GB]](https://ml-inat-competition-datasets.s3.amazonaws.com/2018/train_val2018.tar.gz)
+      * s3://ml-inat-competition-datasets/2018/train_val2018.tar.gz
+      * Running `md5sum train_val2018.tar.gz` should produce `b1c6952ce38f31868cc50ea72d066cc3`
+      * Images have a max dimension of 800px and have been converted to JPEG format
+      * Untaring the images creates a directory structure like `train_val2018/super category/category/image.jpg`. This may take a while.
+  * [Training annotations [26MB]](https://ml-inat-competition-datasets.s3.amazonaws.com/2018/train2018.json.tar.gz)
+      * s3://ml-inat-competition-datasets/2018/train2018.json.tar.gz
+      * Running `md5sum train2018.json.tar.gz` should produce `bfa29d89d629cbf04d826a720c0a68b0`
+  * [Validation annotations [26MB]](https://ml-inat-competition-datasets.s3.amazonaws.com/2018/val2018.json.tar.gz)
+      * s3://ml-inat-competition-datasets/2018/val2018.json.tar.gz
+      * Running `md5sum val2018.json.tar.gz` should produce `f2ed8bfe3e9901cdefceb4e53cd3775d`
+  * [Location annotations (train and val) [11MB]](https://ml-inat-competition-datasets.s3.amazonaws.com/2018/inat2018_locations.zip)
+      * s3://ml-inat-competition-datasets/2018/inat2018_locations.zip
+      * Running `md5sum inat2018_locations.zip` should produce `1704763abc47b75820aa5a3d93c6c0f3`
+  * [Test images [40GB]](https://ml-inat-competition-datasets.s3.amazonaws.com/2018/test2018.tar.gz)
+      * s3://ml-inat-competition-datasets/2018/test2018.tar.gz
+      * Running `md5sum test2018.tar.gz` should produce `4b71d44d73e27475eefea68886c7d1b1`
+      * Images have a max dimension of 800px and have been converted to JPEG format
+      * Untaring the images creates a directory structure like `test2018/image.jpg`.
+  * [Test image info [6.3MB]](https://ml-inat-competition-datasets.s3.amazonaws.com/2018/test2018.json.tar.gz)
+      * s3://ml-inat-competition-datasets/2018/test2018.json.tar.gz
+      * Running `md5sum test2018.json.tar.gz` should produce `fc717a7f53ac72ed8b250221a08a4502`
+  * [Un-obfuscated category names](https://ml-inat-competition-datasets.s3.amazonaws.com/2018/categories.json.tar.gz)
+      * s3://ml-inat-competition-datasets/2018/categories.json.tar.gz
 
-AWS S3 Bucket Paths:
-  * All training and validation images [120GB]
-    * s3://inaturalist-datasets/2018/train_val2018.tar.gz
-  * Training annotations [26MB]
-    * s3://inaturalist-datasets/2018/train2018.json.tar.gz
-  * Validation annotations [26MB]
-    * s3://inaturalist-datasets/2018/val2018.json.tar.gz
-  * Un-obfuscated category names [2MB]
-    * s3://inaturalist-datasets/2018/categories.json.tar.gz
-  * Location annotations (train and val) [11MB]
-    * s3://inaturalist-datasets/2018/inat2018_locations.zip
-  * Test images [40GB]
-    * s3://inaturalist-datasets/2018/test2018.tar.gz
-  * Test image info [6.3MB]
-    * s3://inaturalist-datasets/2018/test2018.json.tar.gz
-
-Example s3cmd usage for downloading the training and validation images:
+Example [s3cmd](https://s3tools.org/s3cmd) usage for downloading the training and validation images:
 ```
 pip install s3cmd
 
 s3cmd \
 --access_key XXXXXXXXXXXXXXXXXXXX \
 --secret_key XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX \
---requester-pays \
-get s3://inaturalist-datasets/2018/train_val2018.tar.gz .
+get s3://ml-inat-competition-datasets/2018/train_val2018.tar.gz .
 ```
-
-### **The following links are currently broken but the information is still relevant.**
-
-Download the dataset files here:
-  * All training and validation images [120GB]
-      * Links for different parts of the world:
-          * [North America](https://storage.googleapis.com/inat_data_2018_us/train_val2018.tar.gz)
-          * [Asia](https://storage.googleapis.com/inat_data_2018_asia/train_val2018.tar.gz)
-          * [Europe](https://storage.googleapis.com/inat_data_2018_eu/train_val2018.tar.gz)
-      * Posterity [Caltech link](http://www.vision.caltech.edu/~gvanhorn/datasets/inaturalist/fgvc5_competition/train_val2018.tar.gz). Warning this will be slow.
-      * Running `md5sum train_val2018.tar.gz` should produce `b1c6952ce38f31868cc50ea72d066cc3`
-      * Images have a max dimension of 800px and have been converted to JPEG format
-      * Untaring the images creates a directory structure like `train_val2018/super category/category/image.jpg`. This may take a while.
-  * Training annotations [26MB]
-      * Links for different parts of the world:
-          * [North America](https://storage.googleapis.com/inat_data_2018_us/train2018.json.tar.gz)
-          * [Asia](https://storage.googleapis.com/inat_data_2018_asia/train2018.json.tar.gz)
-          * [Europe](https://storage.googleapis.com/inat_data_2018_eu/train2018.json.tar.gz)
-      * Posterity [Caltech link](http://www.vision.caltech.edu/~gvanhorn/datasets/inaturalist/fgvc5_competition/train2018.json.tar.gz)
-      * Running `md5sum train2018.json.tar.gz` should produce `bfa29d89d629cbf04d826a720c0a68b0`
-  * Validation annotations [26MB]
-      * Links for different parts of the world:
-          * [North America](https://storage.googleapis.com/inat_data_2018_us/val2018.json.tar.gz)
-          * [Asia](https://storage.googleapis.com/inat_data_2018_asia/val2018.json.tar.gz)
-          * [Europe](https://storage.googleapis.com/inat_data_2018_eu/val2018.json.tar.gz)
-      * Posterity [Caltech link](http://www.vision.caltech.edu/~gvanhorn/datasets/inaturalist/fgvc5_competition/val2018.json.tar.gz)
-      * Running `md5sum val2018.json.tar.gz` should produce `f2ed8bfe3e9901cdefceb4e53cd3775d`
-  * Location annotations (train and val) [11MB]
-      * Posterity [Caltech link](http://www.vision.caltech.edu/~gvanhorn/datasets/inaturalist/fgvc5_competition/inat2018_locations.zip)
-      * Running `md5sum inat2018_locations.zip` should produce `1704763abc47b75820aa5a3d93c6c0f3`
-  * Test images [40GB]
-      * Links for different parts of the world:
-          * [North America](https://storage.googleapis.com/inat_data_2018_us/test2018.tar.gz)
-          * [Asia](https://storage.googleapis.com/inat_data_2018_asia/test2018.tar.gz)
-          * [Europe](https://storage.googleapis.com/inat_data_2018_eu/test2018.tar.gz)
-      * Posterity [Caltech link](http://www.vision.caltech.edu/~gvanhorn/datasets/inaturalist/fgvc5_competition/test2018.tar.gz). Warning this will be slow.
-      * Running `md5sum test2018.tar.gz` should produce `4b71d44d73e27475eefea68886c7d1b1`
-      * Images have a max dimension of 800px and have been converted to JPEG format
-      * Untaring the images creates a directory structure like `test2018/image.jpg`.
-  * Test image info [6.3MB]
-      * Links for different parts of the world:
-          * [North America](https://storage.googleapis.com/inat_data_2018_us/test2018.json.tar.gz)
-          * [Asia](https://storage.googleapis.com/inat_data_2018_asia/test2018.json.tar.gz)
-          * [Europe](https://storage.googleapis.com/inat_data_2018_eu/test2018.json.tar.gz)
-      * Posterity [Caltech link](http://www.vision.caltech.edu/~gvanhorn/datasets/inaturalist/fgvc5_competition/test2018.json.tar.gz)
-      * Running `md5sum test2018.json.tar.gz` should produce `fc717a7f53ac72ed8b250221a08a4502`
 
 ## Pretrained Models
 
