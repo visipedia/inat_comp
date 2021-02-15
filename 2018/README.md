@@ -10,10 +10,10 @@ February 15th, 2021:
   * AWS Open Data download links now freely available. See the [Data](#Data) section below.
 
 August 17th, 2020:
-  * AWS S3 download links were created due to problems with the original Google and Caltech links. The dataset files are in a "requester pays" bucket, so you will need to download them through an AWS API. See the [Data](#Data) section below. 
+  * ~~AWS S3 download links were created due to problems with the original Google and Caltech links. The dataset files are in a "requester pays" bucket, so you will need to download them through an AWS API. See the [Data](#Data) section below.~~ 
 
 August 16th, 2019: 
-  * Additional metadata in the form of latitude, longitude, date, and user_id for each of images in the train and validation sets can be found [here](http://www.vision.caltech.edu/~gvanhorn/datasets/inaturalist/fgvc5_competition/inat2018_locations.zip).
+  * Additional metadata in the form of latitude, longitude, date, and user_id for each of images in the train and validation sets can be found [here](https://ml-inat-competition-datasets.s3.amazonaws.com/2018/inat2018_locations.zip).
 
 June 23rd, 2018: 
   * Un-obfuscated names are released. Simply replace the `categories` list in the dataset files with the list found in this [file](https://ml-inat-competition-datasets.s3.amazonaws.com/2018/categories.json.tar.gz).

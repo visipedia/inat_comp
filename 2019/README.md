@@ -10,7 +10,7 @@ February 15th, 2021:
   * AWS Open Data download links now freely available. See the [Data](#Data) section below.
 
 August 19th, 2020:
-  * AWS S3 download links were created due to problems with the original Caltech links. The dataset files are in a "requester pays" bucket, so you will need to download them through an AWS API. See the [Data](#Data) section below. 
+  * ~~AWS S3 download links were created due to problems with the original Caltech links. The dataset files are in a "requester pays" bucket, so you will need to download them through an AWS API. See the [Data](#Data) section below.~~ 
 
 August 6th, 2019: 
   * Un-obfuscated names are released. Simply replace the `categories` list in the dataset files with the list found in this [file](https://ml-inat-competition-datasets.s3.amazonaws.com/2019/categories.json.tar.gz).

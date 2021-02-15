@@ -11,10 +11,10 @@ February 15th, 2021:
   * AWS Open Data download links now freely available. See the [Data](#Data) section below.
 
 August 17th, 2020:
-  * AWS S3 download links were created due to problems with the original Google and Caltech links. The dataset files are in a "requester pays" bucket, so you will need to download them through an AWS API. See the [Data](#Data) section below. 
+  * ~~AWS S3 download links were created due to problems with the original Google and Caltech links. The dataset files are in a "requester pays" bucket, so you will need to download them through an AWS API. See the [Data](#Data) section below.~~ 
 
 August 16th, 2019: 
-  * Additional metadata in the form of latitude, longitude, date, and user_id for each of images in the train and validation sets can be found [here](http://www.vision.caltech.edu/~gvanhorn/datasets/inaturalist/fgvc4_competition/inat2017_locations.zip).
+  * Additional metadata in the form of latitude, longitude, date, and user_id for each of images in the train and validation sets can be found [here](https://ml-inat-competition-datasets.s3.amazonaws.com/2017/inat2017_locations.zip).
 
 ## Kaggle
 We are using Kaggle to host the leaderboard. Checkout the competition page [here](https://www.kaggle.com/c/inaturalist-challenge-at-fgvc-2017).
