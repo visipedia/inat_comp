@@ -19,7 +19,7 @@ Competition launch and data release coming soon!
 ## Details
 There are a total of 10,000 species in the dataset. The full training dataset contains nearly 2.7M images. To make the dataset more accessible we have also created a "mini" training dataset with 50 examples per species for a total of 500K images. Each species has 10 validation images. There are a total of 500,000 test images. 
 
-| Super Category | Category Count | Train Images | Train Mini Images | Val Images | Test Images |
+| Super Category | Species Count | Train Images | Train Mini Images | Val Images | Test Images |
 | ---- | ---- | ---- | ---- | ---- | ---- |
 Plants|4,271|1,148,702|213,550|42,710|x|
 Insects|2,526|663,682|126,300|25,260|x|
@@ -54,11 +54,11 @@ We made a few modifications to the competition this year. Similar to the [2017](
 We are also releasing location information for each image in the form of `latitude`, `longitude`, and `location_uncertainty` values. We have retroactively added this information to the [2017](../2017) and [2018](../2018) datasets, but this year competitors are able to utilize this information when building models. We hope this motivates competitors to devise interesting solutions to this large scale problem. 
 
 ## Guidelines
-Participants are welcome to use previous iNaturalist competition datasets ([2017](../2017/), [2018](../2018), [2019](../2019)) as an additional data source. However we do not provide a category or image mappings between the datasets and there is certainly overlap between the species included in the various datasets. Besides using previous iNaturalist competition datasets, participants are restricted from collecting additional natural world data for the 2021 competition. Pretrained models may be used to construct the algorithms (e.g. ImageNet pretrained models, or iNaturalist 2017 pretrained models). Please specify any and all external data used for training when uploading results.
+Participants are welcome to use previous iNaturalist competition datasets ([2017](../2017/), [2018](../2018), [2019](../2019)) as an additional data source. However we do not provide a category or image mappings between the datasets and there is certainly overlap between the species and images included in the various datasets. Besides using previous iNaturalist competition datasets, participants are forbidden from collecting additional natural world data for the 2021 competition. Weights from models trained on ImageNet, COCO, and previous iNaturalist competition datasets may be used to initialize models. Models pretrained on other datasets are not allowed. Please specify any and all external data used for training when uploading results.
 
 The general rule is that participants should only use the provided training and validation images (with the exception of the allowed pretrained models) to train a model to classify the test images. We do not want participants crawling the web in search of additional data for the target categories. Participants should be in the mindset that this is the only data available for these categories.
 
-Participants are allowed to collect additional annotations (e.g. bounding boxes, keypoints) on the provided training and validation sets. Teams should specify that they collected additional annotations when submitting results.
+Participants are allowed to collect additional annotations (e.g. bounding boxes, keypoints) on the provided training and validation sets, however they should not annotate the test images. Teams should specify that they collected additional annotations when submitting results.
 
 ## Annotation Format
 We follow the annotation format of the [COCO dataset](http://mscoco.org/dataset/#download) and add additional fields. The annotations are stored in the [JSON format](http://www.json.org/) and are organized as follows:
@@ -138,7 +138,7 @@ The `Id` column corresponds to the test image id. The `Predicted` column corresp
 ## Terms of Use
 By downloading this dataset you agree to the following terms:
 
-1. You will abide by the [iNaturalist Terms of Service](https://www.inaturalist.org/pages/terms)
+1. You will abide by the [iNaturalist Terms of Service](https://www.inaturalist.org/pages/terms).
 2. You will use the data only for non-commercial research and educational purposes.
 3. You will NOT distribute the dataset images.
 4. Cornell University makes no representations or warranties regarding the data, including but not limited to warranties of non-infringement or fitness for a particular purpose.
