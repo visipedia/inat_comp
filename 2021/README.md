@@ -17,7 +17,7 @@ February 13, 2021:
 Competition launch and data release coming soon!
 
 ## Details
-There are a total of 10,000 species in the dataset. The full training dataset contains nearly 2.7M images. To make the dataset more accessible we have also created a "mini" training dataset with 50 examples per species for a total of 500K images. Each species has 10 validation images. There are a total of 500,000 test images. 
+There is a total of 10,000 species in the dataset. The full training dataset contains nearly 2.7M images. To make the dataset more accessible we have also created a "mini" training dataset with 50 examples per species for a total of 500K images. Each species has 10 validation images. There are a total of 500,000 test images. 
 
 | Super Category | Species Count | Train Images | Train Mini Images | Val Images | Test Images |
 | ---- | ---- | ---- | ---- | ---- | ---- |
