@@ -6,6 +6,9 @@ The 2021 competition is part of the [FGVC^8 workshop](https://sites.google.com/v
 Please open an issue if you have questions or problems with the dataset.
 
 ## Updates
+March 2, 2021:
+  * Adding dataset download links.
+
 February 24, 2021:
   * Including dataset description and figures.
 
@@ -14,7 +17,7 @@ February 13, 2021:
 
 
 ## Dates
-Competition launch and data release coming soon!
+Competition launch coming soon!
 
 ## Details
 There is a total of 10,000 species in the dataset. The full training dataset contains nearly 2.7M images. To make the dataset more accessible we have also created a "mini" training dataset with 50 examples per species for a total of 500K images. Each species has 10 validation images. There are a total of 500,000 test images. 
@@ -61,7 +64,7 @@ $$
 ## Differences from Previous Competitions
 We made a few modifications to the competition this year. Similar to the [2017](../2017) competition, we are releasing the species names immediately, instead of obfuscating them. Our reason for obsfucating them in [2018](../2018) and [2019](../2019) was to make it difficult for competitors to scrape the web (or iNaturalist itself) for additional images. Because we are releasing 2.7M training images and the dataset doesn't necessarily focus on the long tail problem we feel that we can release the species names without worry. This does not mean that scraping is allowed. Please do not scrape for additional data, especially from iNaturalist. Having the species names also makes interpretting validation results easier when examining confusion matrices and accuracy statistics. 
 
-We are also releasing location information for each image in the form of `latitude`, `longitude`, and `location_uncertainty` values. We have retroactively added this information to the [2017](../2017) and [2018](../2018) datasets, but this year competitors are able to utilize this information when building models. We hope this motivates competitors to devise interesting solutions to this large scale problem. 
+We are also releasing location and date information for each image in the form of `latitude`, `longitude`, `location_uncertainty`, and `date` values. We have retroactively added this information to the [2017](../2017) and [2018](../2018) datasets, but this year competitors are able to utilize this information when building models. We hope this motivates competitors to devise interesting solutions to this large scale problem. 
 
 ## Guidelines
 Participants are welcome to use previous iNaturalist competition datasets ([2017](../2017/), [2018](../2018), [2019](../2019)) as an additional data source. However we do not provide a category or image mappings between the datasets and there is certainly overlap between the species and images included in the various datasets. Besides using previous iNaturalist competition datasets, participants are forbidden from collecting additional natural world data for the 2021 competition. Weights from models trained on ImageNet, COCO, and previous iNaturalist competition datasets may be used to initialize models. Models pretrained on other datasets are not allowed. Please specify any and all external data used for training when uploading results.
@@ -87,7 +90,7 @@ info{
   "description" : str,
   "contributor" : str,
   "url" : str,
-  "date_created" : datetime,
+  "date_created" : str,
 }
 
 image{
@@ -132,7 +135,8 @@ license{
 ```
 
 ### Annotation Format Notes:
-  * It is possible for the `latitude`, `longitude`, and `location_uncertainty` fields to be `nan` when the values were missing from the respective iNaturalist observation. 
+  * It is possible for the `latitude`, `longitude`, and `location_uncertainty` fields to be `null` when the values were missing from the respective iNaturalist observation (due to the location being private or the species being sensitive).
+  * `location_uncertainty` is measured in meters, and may contain bogus values such as `-80` and `106807033`. We decided to provide the raw values that we obtained from iNaturalist instead of sanitized values.
   * The `test.json` file does not have the `annotations` field. You can only evaluate on the test set by uploading your submission to the Kaggle competition. 
 
 ## Submission Format
@@ -155,7 +159,40 @@ By downloading this dataset you agree to the following terms:
 5. You accept full responsibility for your use of the data and shall defend and indemnify Cornell University, including its employees, officers and agents, against any and all claims arising from your use of the data, including but not limited to your use of any copies of copyrighted images that you may create from the data.
 
 ## Data
-Links coming soon!
+
+The dataset files are available through the AWS Open Data Program:
+  * [Train Images [224GB]](https://ml-inat-competition-datasets.s3.amazonaws.com/2021/train_val2018.tar.gz)
+      * s3://ml-inat-competition-datasets/2021/train.tar.gz
+      * Running `md5sum train.tar.gz` should produce `e0526d53c7f7b2e3167b2b43bb2690ed`
+      * Images have a max dimension of 500px and have been converted to JPEG format
+      * Untaring the images creates a directory structure like `train/category/image.jpg`. This may take a while.
+  * [Train Annotations [221MB]](https://ml-inat-competition-datasets.s3.amazonaws.com/2021/train.json.tar.gz)
+      * s3://ml-inat-competition-datasets/2021/train.json.tar.gz
+      * Running `md5sum train.json.tar.gz` should produce `38a7bb733f7a09214d44293460ec0021`
+  * [Train Mini Images [42GB]](https://ml-inat-competition-datasets.s3.amazonaws.com/2021/train_mini.tar.gz)
+      * s3://ml-inat-competition-datasets/2021/train_mini.tar.gz
+      * Running `md5sum train_mini.tar.gz` should produce `db6ed8330e634445efc8fec83ae81442`
+      * Images have a max dimension of 500px and have been converted to JPEG format
+      * Untaring the images creates a directory structure like `train_mini/category/image.jpg`. This may take a while.
+  * [Train Mini Annotations [45MB]](https://ml-inat-competition-datasets.s3.amazonaws.com/2021/train_mini.json.tar.gz)
+      * s3://ml-inat-competition-datasets/2021/train_mini.json.tar.gz
+      * Running `md5sum train_mini.json.tar.gz` should produce `395a35be3651d86dc3b0d365b8ea5f92`
+  * [Validation Images [8.4GB]](https://ml-inat-competition-datasets.s3.amazonaws.com/2021/val.tar.gz)
+      * s3://ml-inat-competition-datasets/2021/val.tar.gz
+      * Running `md5sum val.tar.gz` should produce `f6f6e0e242e3d4c9569ba56400938afc`
+      * Images have a max dimension of 500px and have been converted to JPEG format
+      * Untaring the images creates a directory structure like `val/category/image.jpg`. This may take a while.
+  * [Validation Annotations [9.4MB]](https://ml-inat-competition-datasets.s3.amazonaws.com/2021/val.json.tar.gz)
+      * s3://ml-inat-competition-datasets/2021/val.json.tar.gz
+      * Running `md5sum val.json.tar.gz` should produce `4d761e0f6a86cc63e8f7afc91f6a8f0b`
+  * [Test Images [43GB]](https://ml-inat-competition-datasets.s3.amazonaws.com/2021/public_test.tar.gz)
+      * s3://ml-inat-competition-datasets/2021/public_test.tar.gz
+      * Running `md5sum public_test.tar.gz` should produce `7124b949fe79bfa7f7019a15ef3dbd06`
+      * Images have a max dimension of 500px and have been converted to JPEG format
+      * Untaring the images creates a directory structure like `public_test/image.jpg`.
+  * [Test Info [21MB]](https://ml-inat-competition-datasets.s3.amazonaws.com/2021/public_test.json.tar.gz)
+      * s3://ml-inat-competition-datasets/2021/public_test.json.tar.gz
+      * Running `md5sum public_test.json.tar.gz` should produce `7a9413db55c6fa452824469cc7dd9d3d`
 
 ## Previous Competitions
 * [2019 Competition](../2019)
