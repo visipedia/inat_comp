@@ -6,6 +6,9 @@ The 2021 competition is part of the [FGVC^8 workshop](https://sites.google.com/v
 Please open an issue if you have questions or problems with the dataset.
 
 ## Updates
+March 3, 2021:
+  * Updating evaluation metric, and launching [Kaggle competition](https://www.kaggle.com/c/inaturalist-2021).
+
 March 2, 2021:
   * Adding dataset download links.
 
@@ -15,9 +18,14 @@ February 24, 2021:
 February 13, 2021:
   * Mocking up 2021 page. Preparing dataset files. 
 
+## Kaggle
+We are using Kaggle to host the leaderboard. Checkout the competition page [here](https://www.kaggle.com/c/inaturalist-2021).
 
 ## Dates
-Competition launch coming soon!
+|||
+|------|---------------|
+Dataset Released |March, 2018|
+Submission Server Open |March, 2018|
 
 ## Details
 There is a total of 10,000 species in the dataset. The full training dataset contains nearly 2.7M images. To make the dataset more accessible we have also created a "mini" training dataset with 50 examples per species for a total of 500K images. Each species has 10 validation images. There are a total of 500,000 test images. 
@@ -43,13 +51,20 @@ Total|10,000|2,686,843|500,000|100,000|500,000|
 ![Location Distribution](assets/location_distribution.png)
 
 ## Evaluation
-We follow a similar metric to the classification tasks of the [ILSVRC](http://image-net.org/challenges/LSVRC/2016/index#scene). For each image <img src="https://rawgit.com/visipedia/inat_comp/master/2021/svgs/77a3b857d53fb44e33b53e4c8b68351a.svg?invert_in_darkmode" align=middle width=5.642109000000004pt height=21.602129999999985pt/>, an algorithm will produce 3 labels <img src="https://rawgit.com/visipedia/inat_comp/master/2021/svgs/655bedbaf4a65f397b5041d0fdecde4c.svg?invert_in_darkmode" align=middle width=15.601905000000002pt height=22.745910000000016pt/>, <img src="https://rawgit.com/visipedia/inat_comp/master/2021/svgs/946e592e2b2753a9272767ae3dd5b9a9.svg?invert_in_darkmode" align=middle width=82.4274pt height=21.602129999999985pt/>. We allow 3 labels because some categories are disambiguated with additional data provided by the observer, such as latitude, longitude and date. For a small percentage of images, it might also be the case that multiple categories occur in an image (e.g. a photo of a bee on a flower). For this competition each image has one ground truth label <img src="https://rawgit.com/visipedia/inat_comp/master/2021/svgs/681a37b53b66acbc455e39ca3e6f1c41.svg?invert_in_darkmode" align=middle width=12.444795000000004pt height=14.102549999999994pt/>, and the error for that image is:
-<p align="center"><img src="https://rawgit.com/visipedia/inat_comp/master/2021/svgs/7a42826f81c53c77e0fef3c827238d25.svg?invert_in_darkmode" align=middle width=123.40366499999999pt height=24.865665pt/></p>
-Where
-<p align="center"><img src="https://rawgit.com/visipedia/inat_comp/master/2021/svgs/7a45c501d5042bd031a267f008fa2ae6.svg?invert_in_darkmode" align=middle width=190.2021pt height=49.131389999999996pt/></p>
+We are using top-1 error as the evaluation metric for the Kaggle competition. For each image <img src="https://rawgit.com/visipedia/inat_comp/master/2021/svgs/77a3b857d53fb44e33b53e4c8b68351a.svg?invert_in_darkmode" align=middle width=5.642109000000004pt height=21.602129999999985pt/>, an algorithm will produce one label <img src="https://rawgit.com/visipedia/inat_comp/master/2021/svgs/bb29cf3d0decad4c2df62b08fbcb2d23.svg?invert_in_darkmode" align=middle width=9.520170000000002pt height=22.745910000000016pt/> and we will compare this label to the ground truth label for the image <img src="https://rawgit.com/visipedia/inat_comp/master/2021/svgs/681a37b53b66acbc455e39ca3e6f1c41.svg?invert_in_darkmode" align=middle width=12.444795000000004pt height=14.102549999999994pt/>, computing the error as: 
+<p align="center"><img src="https://rawgit.com/visipedia/inat_comp/master/2021/svgs/562405af4c097c78c789a51adce04711.svg?invert_in_darkmode" align=middle width=156.77029499999998pt height=49.131389999999996pt/></p>
 
 The overall error score for an algorithm is the average error over all <img src="https://rawgit.com/visipedia/inat_comp/master/2021/svgs/f9c4988898e7f532b9f826a75014ed3c.svg?invert_in_darkmode" align=middle width=14.944050000000002pt height=22.381919999999983pt/> test images:
 <p align="center"><img src="https://rawgit.com/visipedia/inat_comp/master/2021/svgs/444adcac0c7cbb4a8419ee1484625349.svg?invert_in_darkmode" align=middle width=118.05122999999999pt height=41.069655pt/></p>
+
+A top-1 metric is unforgiving and will allow us to test the limits of image classification performance. We acknowledge that there are problems with a top-1 metric, which is why we traditionally have used a top-K metric. Some cases where a top-K metric is more appropriate include: 
+  1. Images where multiple species are present (e.g. a bee on a flower) and therefore it is ambiguous to decide which species an algorithm should report.  
+  2. Images where the ground truth label is noisy. A top-k metric would smooth over this noise.
+  3. Species that are visually identical, and separated geographically. 
+
+For (1.) we assume truly ambiguous cases to be rare and assume the subject of the photo is the target species to identify (see [here](https://vimeo.com/167341998) for a video from iNaturalist describing "How to Take Identifiable Photos"). For (2.) this is an unfortunate reality of large scale datasets. For (3.) we are providing competitors with location and date information to help disambiguate these cases, should they wish to use it.
+
+Note that while the Kaggle competition leaderboard is computed using top-1 error, competitors are *required* to submit 5 labels per image so that the organizers can study top-K performance. We will present the analysis at the FGVC8 workshop. See the [Submission Format](#Submission%20Format) section below. 
 
 ## Differences from Previous Competitions
 We made a few modifications to the competition this year. Similar to the [2017](../2017) competition, we are releasing the species names immediately, instead of obfuscating them. Our reason for obsfucating them in [2018](../2018) and [2019](../2019) was to make it difficult for competitors to scrape the web (or iNaturalist itself) for additional images. Because we are releasing 2.7M training images and the dataset doesn't necessarily focus on the long tail problem we feel that we can release the species names without worry. This does not mean that scraping is allowed. Please do not scrape for additional data, especially from iNaturalist. Having the species names also makes interpretting validation results easier when examining confusion matrices and accuracy statistics. 
@@ -134,10 +149,13 @@ license{
 The submission format for the Kaggle competition is a csv file with the following format:
 ```
 Id,Predicted
-12345,0 78 23
-67890,83 13 42
+1,9279 608 1220 6626 8696
+2,3821 4951 4833 7040 6913
+3,4112 4061 7453 7540 2348
 ```
-The `Id` column corresponds to the test image id. The `Predicted` column corresponds to 3 category ids, separated by spaces. You should have one row for each test image. Please sort your predictions from most confident to least, from left to right, this will allow us to study top-1, top-2, and top-3 accuracy.
+The `Id` column corresponds to the test image id. The `Predicted` column corresponds to 5 category ids, separated by spaces. You should have one row for each test image, and the 5 category labels should be sorted in order of decreasing confidence (the most confident category is the first category label). The Kaggle leaderboard will be computed using top-1 error (see the [Evaluation](#Evaluation) section above), and the competition organizers will study top-K error using the remaining predictions and present the results at the FGVC8 workshop.
+
+*Your submission file must have 5 category predictions per image or the Kaggle evaluation will fail.*
 
 ## Terms of Use
 By downloading this dataset you agree to the following terms:
