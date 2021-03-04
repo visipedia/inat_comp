@@ -177,7 +177,7 @@ By downloading this dataset you agree to the following terms:
 ## Data
 
 The dataset files are available through the AWS Open Data Program:
-  * [Train Images [224GB]](https://ml-inat-competition-datasets.s3.amazonaws.com/2021/train_val2018.tar.gz)
+  * [Train Images [224GB]](https://ml-inat-competition-datasets.s3.amazonaws.com/2021/train.tar.gz)
       * s3://ml-inat-competition-datasets/2021/train.tar.gz
       * Running `md5sum train.tar.gz` should produce `e0526d53c7f7b2e3167b2b43bb2690ed`
       * Images have a max dimension of 500px and have been converted to JPEG format
