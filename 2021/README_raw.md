@@ -24,8 +24,8 @@ We are using Kaggle to host the leaderboard. Checkout the competition page [here
 ## Dates
 |||
 |------|---------------|
-Dataset Released |March, 2018|
-Submission Server Open |March, 2018|
+Dataset Released |March, 2021|
+Submission Server Open |March, 2021|
 
 ## Details
 There is a total of 10,000 species in the dataset. The full training dataset contains nearly 2.7M images. To make the dataset more accessible we have also created a "mini" training dataset with 50 examples per species for a total of 500K images. Each species has 10 validation images. There are a total of 500,000 test images. 
