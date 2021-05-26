@@ -37,7 +37,7 @@ Submission Deadline|June, 2018|
 Winners Announced|June, 2018|
 
 ## Details
-There are a total of 8,142 species in the dataset, with 437,513 training and 24,426 validation images.
+There are a total of 8,142 species in the dataset, with 437,513 training images, 24,426 validation images, and 149,394 test images.
 
 | Super Category |	Category Count	| Train Images |	Val Images |
 |------|---------------|-------------|---------------|
